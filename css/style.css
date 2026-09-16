@@ -7386,3 +7386,73 @@ html, body {
     height: 100% !important;
   }
 }
+
+/* =========================================================
+   RECOVRA — MAIN MOBILE NAVIGATION FIX
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Bottom navigation */
+    .navigation {
+        position: fixed !important;
+        left: 50% !important;
+        right: auto !important;
+        bottom: 12px !important;
+
+        transform: translateX(-50%) !important;
+
+        width: calc(100vw - 24px) !important;
+        max-width: 400px !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-around !important;
+
+        z-index: 9999 !important;
+    }
+
+    /* Item navigation */
+    .navigation > * {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+    }
+
+    /* Main sidebar */
+    .sidebar {
+        position: fixed !important;
+        left: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+
+        height: 100dvh !important;
+        width: min(280px, 82vw) !important;
+
+        z-index: 10000 !important;
+    }
+
+    /* Cegah konten melebar */
+    main,
+    .main,
+    .main-content {
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+}
+
+
+/* HP kecil */
+@media (max-width: 480px) {
+
+    .navigation {
+        width: calc(100vw - 16px) !important;
+        bottom: 8px !important;
+    }
+
+    .sidebar {
+        width: min(280px, 84vw) !important;
+    }
+}
