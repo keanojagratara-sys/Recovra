@@ -6577,14 +6577,6 @@ body {
   .content { padding-bottom: 84px !important; }
 }
 
-/* Bottom-nav cuma nampilin menu prioritas — selebihnya tetap lengkap di sidebar kiri */
-.bottom-navigation .nav-item[data-page="medicine"],
-.bottom-navigation .nav-item[data-page="activity"],
-.bottom-navigation .nav-item[data-page="chatai"],
-.bottom-navigation .nav-item[data-page="notifications"] {
-  display: none !important;
-}
-
 /* Sidebar kiri: kalau menunya kepanjangan dari tinggi layar, bagian menu-nya sendiri
    bisa discroll — TANPA ganggu animasi hover expand/collapse aslinya. */
 .left-sidebar .sidebar-section {
@@ -7565,4 +7557,111 @@ html, body {
   .left-sidebar {
     width: min(280px, 86vw) !important;
   }
+}
+
+/* =========================================================
+   RECOVRA — FINAL BOTTOM NAV REBUILD (v10)
+   Ditulis ulang total dari nol, taruh paling akhir + !important,
+   biar gak lagi kena tabrakan sama puluhan aturan lama yang numpuk.
+   ========================================================= */
+
+.bottom-navigation {
+  display: block !important;
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 16px !important;
+  transform: translateX(-50%) !important;
+  width: min(94vw, 420px) !important;
+  height: 64px !important;
+  border-radius: 20px !important;
+  background: rgba(14,20,17,.92) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  box-shadow: 0 14px 34px rgba(0,0,0,.4) !important;
+  z-index: 200 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.bottom-navigation .navigation {
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: space-around !important;
+  width: 100% !important;
+  height: 100% !important;
+  gap: 0 !important;
+  padding: 0 4px !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.bottom-navigation .nav-item {
+  flex: 1 1 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  margin: 0 !important;
+  padding: 6px 2px !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  background: transparent !important;
+  color: var(--text-3) !important;
+  min-width: 0 !important;
+}
+
+.bottom-navigation .nav-item.active {
+  color: var(--green) !important;
+  background: rgba(63,213,131,.12) !important;
+}
+
+/* Matiin semua ikon dekoratif custom (bikinan CSS lewat ::before/::after) di bottom-nav —
+   biar cuma pakai SVG asli yang udah ada di dalam tombolnya, gak dobel/numpuk. */
+.bottom-navigation .nav-icon::before,
+.bottom-navigation .nav-icon::after {
+  content: none !important;
+  display: none !important;
+}
+
+.bottom-navigation .nav-icon {
+  position: static !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 !important;
+}
+
+.bottom-navigation .nav-icon svg {
+  width: 20px !important;
+  height: 20px !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8 !important;
+}
+
+.bottom-navigation .nav-label {
+  position: static !important;
+  display: block !important;
+  font-size: 9.5px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  max-width: none !important;
+  color: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.bottom-navigation .nav-badge {
+  position: absolute !important;
+  top: 2px !important;
+  right: 14px !important;
+}
+
+@media (min-width: 851px) {
+  .bottom-navigation { display: none !important; }
 }
