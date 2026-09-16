@@ -92,8 +92,8 @@ const App = (() => {
     document.querySelector('.content')?.scrollTo({ top: 0, behavior: 'auto' });
 
     // Close sidebar on mobile
-    if (window.innerWidth <= 768) {
-      document.getElementById('sidebar')?.classList.remove('open');
+    if (window.innerWidth <= 850) {
+      closeSidebar();
     }
   }
 
@@ -627,7 +627,15 @@ const App = (() => {
   }
 
   function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('open');
+    const isOpen = document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('nav-drawer-backdrop')?.classList.toggle('open', isOpen);
+    document.body.classList.toggle('nav-drawer-open', isOpen);
+  }
+
+  function closeSidebar() {
+    document.getElementById('sidebar')?.classList.remove('open');
+    document.getElementById('nav-drawer-backdrop')?.classList.remove('open');
+    document.body.classList.remove('nav-drawer-open');
   }
 
   function openSettingsModal() {
@@ -815,6 +823,7 @@ const App = (() => {
     openModal,
     closeModal,
     toggleSidebar,
+    closeSidebar,
     openSettingsModal,
     saveSettings,
     exportData,

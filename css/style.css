@@ -7456,3 +7456,113 @@ html, body {
         width: min(280px, 84vw) !important;
     }
 }
+/* =========================================================
+   MOBILE NAV — CONSOLIDATED FIX (final, authoritative)
+   The mobile drawer stopped working because earlier patches piled up
+   conflicting rules: ".left-sidebar" was forced to "display:none"
+   below 850px, and a later generic ".navigation" rule (meant only for
+   the bottom bar) also matched the sidebar's own <nav id="sidebar-
+   navigation">, pinning it to the bottom of the screen. This block is
+   intentionally last in the file so it wins the cascade cleanly.
+   ========================================================= */
+
+.nav-drawer-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 6, 5, .58);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 10999;
+}
+
+@media (max-width: 850px) {
+  .nav-drawer-backdrop.open {
+    display: block;
+  }
+
+  body.nav-drawer-open {
+    overflow: hidden;
+  }
+
+  .left-sidebar {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+    width: min(300px, 84vw) !important;
+    height: 100dvh !important;
+    border-radius: 0 22px 22px 0 !important;
+    transform: translateX(-100%) !important;
+    transition: transform .32s cubic-bezier(.22,1,.36,1) !important;
+    z-index: 11000 !important;
+  }
+
+  .left-sidebar.open {
+    transform: translateX(0) !important;
+  }
+
+  /* No collapsed "rail" state on mobile — labels are always visible
+     once the drawer is open. */
+  .left-sidebar .logo-text,
+  .left-sidebar .sidebar-section-label,
+  .left-sidebar .user-info {
+    opacity: 1 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    pointer-events: auto !important;
+  }
+
+  .left-sidebar .nav-item {
+    justify-content: flex-start !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .left-sidebar .nav-label,
+  .left-sidebar .nav-badge {
+    display: inline-flex !important;
+  }
+
+  .left-sidebar .sidebar-section {
+    max-height: none !important;
+    flex: 1 1 auto;
+    overflow-y: auto !important;
+  }
+
+  /* Undo the generic ".navigation" bottom-fixed rule for the sidebar's
+     own nav — it should lay out as a normal vertical list inside the
+     drawer, not float pinned to the bottom of the viewport. */
+  #sidebar-navigation.navigation {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    z-index: auto !important;
+  }
+
+  #sidebar-navigation.navigation > * {
+    flex: none !important;
+  }
+
+  /* Keep the last card on every page clear of the floating bottom nav. */
+  .content {
+    padding-bottom: max(132px, calc(96px + env(safe-area-inset-bottom))) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-sidebar {
+    width: min(280px, 86vw) !important;
+  }
+}
