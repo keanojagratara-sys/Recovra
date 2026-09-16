@@ -1,0 +1,19 @@
+RECOVRA — CARA MENJALANKAN
+
+1. Pastikan Node.js sudah terpasang.
+2. Buka Terminal / Command Prompt di folder ini.
+3. Jalankan:
+   npm install
+4. Jika ingin AI online aktif, buat file bernama .env dari .env.example.
+   Isi AI_API_KEY dengan API key milik sendiri. JANGAN mengunggah .env asli ke GitHub atau mengirimkannya ke orang lain.
+5. Jalankan:
+   npm start
+6. Buka browser dan masuk ke:
+   http://localhost:3000
+
+TANPA .env:
+Aplikasi tetap dapat dibuka dan fitur AI menggunakan fallback offline yang tersedia di aplikasi. AI online membutuhkan API key.
+
+UNTUK GITHUB:
+- .env sudah dikecualikan oleh .gitignore.
+- Yang aman diunggah adalah .env.example, bukan .env asli.

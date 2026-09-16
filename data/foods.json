@@ -1,0 +1,1380 @@
+{
+  "conditions": {
+    "cedera_fisik": {
+      "label": "Cedera Fisik / Pemulihan Tulang",
+      "icon": "🦴",
+      "description": "Cocok untuk pemulihan cedera otot, tulang, atau pasca operasi",
+      "foods": [
+        {
+          "id": "salmon",
+          "name": "Salmon",
+          "emoji": "🐟",
+          "category": "Protein & Lemak Sehat",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "150–200g",
+          "nutrients": [
+            "Omega-3",
+            "Protein Tinggi",
+            "Vitamin D",
+            "Selenium"
+          ],
+          "why": "Omega-3 pada salmon bekerja sebagai anti-inflamasi alami yang mempercepat pemulihan jaringan. Protein tingginya membantu membangun kembali serat otot yang rusak, sementara Vitamin D mendukung penyerapan kalsium untuk kesehatan tulang.",
+          "tags": [
+            "anti-inflamasi",
+            "pemulihan-otot",
+            "tulang-kuat"
+          ]
+        },
+        {
+          "id": "telur",
+          "name": "Telur Rebus",
+          "emoji": "🥚",
+          "category": "Protein Lengkap",
+          "timing": "Sarapan / Snack",
+          "portion": "2–3 butir",
+          "nutrients": [
+            "Protein Lengkap",
+            "Vitamin B12",
+            "Kolin",
+            "Leucine"
+          ],
+          "why": "Telur mengandung semua asam amino esensial (protein lengkap) yang dibutuhkan untuk sintesis protein otot baru. Leucine secara khusus memicu proses anabolik (pembangunan) jaringan otot.",
+          "tags": [
+            "pemulihan-otot",
+            "energi",
+            "protein-lengkap"
+          ],
+          "campuran": [
+            "Roti gandum",
+            "Alpukat",
+            "Sedikit garam & lada"
+          ],
+          "resep": [
+            "Rebus telur dalam air mendidih selama 8-10 menit untuk hasil matang sempurna.",
+            "Dinginkan sebentar di air es, lalu kupas.",
+            "Sajikan dengan roti gandum panggang dan irisan alpukat."
+          ]
+        },
+        {
+          "id": "bayam",
+          "name": "Bayam Segar",
+          "emoji": "🥬",
+          "category": "Sayur Hijau",
+          "timing": "Setiap Waktu Makan",
+          "portion": "1–2 genggam besar",
+          "nutrients": [
+            "Zat Besi",
+            "Magnesium",
+            "Vitamin K",
+            "Vitamin C",
+            "Folat"
+          ],
+          "why": "Magnesium membantu relaksasi otot dan mencegah kram selama pemulihan. Vitamin K sangat penting untuk proses pembekuan darah dan kesehatan tulang. Zat besi mendukung transportasi oksigen ke jaringan yang sedang sembuh.",
+          "tags": [
+            "tulang-kuat",
+            "anti-inflamasi",
+            "mineral"
+          ]
+        },
+        {
+          "id": "kunyit",
+          "name": "Kunyit (Turmeric)",
+          "emoji": "🌿",
+          "category": "Rempah Anti-Inflamasi",
+          "timing": "Setiap Waktu (tambahkan ke masakan)",
+          "portion": "1/2–1 sdt per sajian",
+          "nutrients": [
+            "Curcumin",
+            "Antioksidan",
+            "Anti-inflamasi alami"
+          ],
+          "why": "Curcumin dalam kunyit adalah salah satu senyawa anti-inflamasi paling kuat di alam. Membantu mengurangi pembengkakan dan nyeri secara signifikan, mempercepat pemulihan cedera. Efektif setara dengan beberapa obat anti-inflamasi.",
+          "tags": [
+            "anti-inflamasi",
+            "pereda-nyeri",
+            "antioksidan"
+          ]
+        },
+        {
+          "id": "alpukat",
+          "name": "Alpukat",
+          "emoji": "🥑",
+          "category": "Lemak Sehat",
+          "timing": "Sarapan / Snack",
+          "portion": "1/2 buah",
+          "nutrients": [
+            "Lemak Tak Jenuh",
+            "Vitamin E",
+            "Kalium",
+            "Magnesium"
+          ],
+          "why": "Vitamin E adalah antioksidan kuat yang melindungi sel dari kerusakan oksidatif selama proses penyembuhan. Kalium mencegah kram otot. Lemak sehatnya membantu penyerapan vitamin larut lemak (A, D, E, K).",
+          "tags": [
+            "anti-inflamasi",
+            "pemulihan-jaringan",
+            "lemak-sehat"
+          ]
+        },
+        {
+          "id": "susu",
+          "name": "Susu / Yogurt",
+          "emoji": "🥛",
+          "category": "Produk Susu",
+          "timing": "Pagi / Malam",
+          "portion": "250ml / 150g",
+          "nutrients": [
+            "Kalsium",
+            "Protein",
+            "Vitamin D",
+            "Probiotik (yogurt)"
+          ],
+          "why": "Kalsium dan Vitamin D adalah kombinasi utama untuk memperkuat tulang yang sedang pulih dari cedera. Yogurt juga mengandung probiotik yang menjaga kesehatan usus, mendukung sistem imun selama pemulihan.",
+          "tags": [
+            "tulang-kuat",
+            "protein",
+            "imun"
+          ]
+        },
+        {
+          "id": "blueberry",
+          "name": "Blueberry",
+          "emoji": "🫐",
+          "category": "Buah Antioksidan",
+          "timing": "Sarapan / Snack",
+          "portion": "Segenggam (80–100g)",
+          "nutrients": [
+            "Anthocyanin",
+            "Vitamin C",
+            "Antioksidan tinggi",
+            "Flavonoid"
+          ],
+          "why": "Anthocyanin dalam blueberry adalah antioksidan super yang melawan radikal bebas dan mengurangi peradangan. Vitamin C-nya merangsang produksi kolagen yang krusial untuk perbaikan jaringan ikat, tendon, dan ligamen.",
+          "tags": [
+            "antioksidan",
+            "kolagen",
+            "anti-inflamasi"
+          ]
+        },
+        {
+          "id": "brokoli",
+          "name": "Brokoli",
+          "emoji": "🥦",
+          "category": "Sayur Cruciferous",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "1 cangkir (dikukus)",
+          "nutrients": [
+            "Vitamin C",
+            "Vitamin K",
+            "Sulforaphane",
+            "Folat",
+            "Kalsium"
+          ],
+          "why": "Vitamin C mendorong sintesis kolagen untuk memperbaiki jaringan. Sulforaphane adalah senyawa unik yang telah terbukti mengurangi kerusakan otot dan mempercepat pemulihan. Vitamin K mendukung kesehatan tulang.",
+          "tags": [
+            "kolagen",
+            "anti-inflamasi",
+            "tulang-kuat"
+          ]
+        },
+        {
+          "id": "jambu_biji",
+          "name": "Jambu Biji",
+          "emoji": "🍐",
+          "category": "Buah Kaya Vitamin C",
+          "timing": "Sarapan / Snack",
+          "portion": "1 buah sedang",
+          "nutrients": [
+            "Vitamin C",
+            "Serat",
+            "Likopen",
+            "Antioksidan"
+          ],
+          "why": "Vitamin C membantu pembentukan kolagen yang diperlukan tubuh untuk merawat jaringan ikat dan kulit selama masa pemulihan.",
+          "tags": [
+            "kolagen",
+            "antioksidan",
+            "pemulihan-jaringan"
+          ]
+        },
+        {
+          "id": "tahu_kedelai",
+          "name": "Tahu Kedelai",
+          "emoji": "🧈",
+          "category": "Protein Nabati",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "2–3 potong",
+          "nutrients": [
+            "Protein",
+            "Kalsium",
+            "Zat Besi",
+            "Magnesium"
+          ],
+          "why": "Tahu dapat menjadi pilihan protein yang praktis. Kandungan kalsium dan proteinnya mendukung pola makan seimbang selama pemulihan tulang dan otot.",
+          "tags": [
+            "protein",
+            "tulang-kuat",
+            "pemulihan-otot"
+          ]
+        },
+        {
+          "id": "biji_lab",
+          "name": "Biji Labu",
+          "emoji": "🎃",
+          "category": "Biji-bijian",
+          "timing": "Snack / Taburan Makanan",
+          "portion": "1–2 sdm",
+          "nutrients": [
+            "Protein",
+            "Magnesium",
+            "Zinc",
+            "Lemak Sehat"
+          ],
+          "why": "Biji labu menambah protein, magnesium, dan zinc dalam porsi kecil sehingga cocok sebagai pelengkap makanan saat kebutuhan nutrisi meningkat.",
+          "tags": [
+            "protein",
+            "mineral",
+            "pemulihan-otot"
+          ]
+        },
+        {
+          "id": "jambu_biji_kaya_c",
+          "name": "Jambu Biji",
+          "emoji": "🍐",
+          "category": "Buah Kaya Vitamin C",
+          "timing": "Sarapan / Snack",
+          "portion": "1 buah sedang",
+          "nutrients": [
+            "Vitamin C",
+            "Serat",
+            "Antioksidan"
+          ],
+          "why": "Vitamin C melengkapi pola makan yang mendukung pembentukan kolagen dan perawatan jaringan ikat selama pemulihan.",
+          "tags": [
+            "kolagen",
+            "antioksidan",
+            "pemulihan-jaringan"
+          ]
+        },
+        {
+          "id": "kacang_kedelai",
+          "name": "Edamame",
+          "emoji": "🫛",
+          "category": "Protein Nabati",
+          "timing": "Snack / Makan Siang",
+          "portion": "1 mangkuk kecil",
+          "nutrients": [
+            "Protein",
+            "Serat",
+            "Kalsium"
+          ],
+          "why": "Edamame menjadi alternatif protein nabati dan serat ketika ingin mengganti sumber protein hewani.",
+          "tags": [
+            "protein",
+            "tulang-kuat",
+            "serat"
+          ]
+        },
+        {
+          "id": "jambu_biji_smoothie",
+          "name": "Smoothie Jambu & Yogurt",
+          "emoji": "🥤",
+          "category": "Minuman Bernutrisi",
+          "timing": "Sarapan / Snack",
+          "portion": "1 gelas",
+          "nutrients": [
+            "Protein",
+            "Vitamin C",
+            "Kalsium"
+          ],
+          "why": "Kombinasi buah dan yogurt membantu menambah protein serta buah dalam bentuk yang praktis dan mudah dikonsumsi.",
+          "tags": [
+            "kolagen",
+            "protein",
+            "tulang-kuat"
+          ],
+          "campuran": [
+            "Yogurt plain",
+            "Madu",
+            "Es batu secukupnya"
+          ],
+          "resep": [
+            "Kupas dan potong jambu biji, buang bijinya jika terlalu banyak.",
+            "Blender jambu biji dengan yogurt plain dan sedikit madu.",
+            "Tambahkan es batu, blender sebentar lagi sampai halus, sajikan segera."
+          ]
+        }
+      ]
+    },
+    "demam": {
+      "label": "Demam / Infeksi",
+      "icon": "🌡️",
+      "description": "Makanan untuk membantu menurunkan demam dan melawan infeksi",
+      "foods": [
+        {
+          "id": "jahe_demam",
+          "name": "Jahe Hangat",
+          "emoji": "🫚",
+          "category": "Rempah Antipiretik",
+          "timing": "3–4x sehari",
+          "portion": "1 cangkir teh jahe",
+          "nutrients": [
+            "Gingerol",
+            "Shogaol",
+            "Antioksidan",
+            "Anti-inflamasi"
+          ],
+          "why": "Gingerol dalam jahe memiliki efek antipiretik (penurun panas) alami dan anti-inflamasi yang kuat. Membantu meredakan mual yang sering menyertai demam, dan merangsang keringat yang membantu menurunkan suhu tubuh.",
+          "tags": [
+            "penurun-demam",
+            "anti-mual",
+            "antibakteri"
+          ]
+        },
+        {
+          "id": "kaldu_ayam",
+          "name": "Kaldu Ayam",
+          "emoji": "🍲",
+          "category": "Sup Hangat",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "1–2 mangkuk",
+          "nutrients": [
+            "Elektrolit",
+            "Protein",
+            "Mineral",
+            "Kolagen",
+            "Zinc"
+          ],
+          "why": "Kaldu ayam mengandung elektrolit alami (sodium, kalium) yang terkuras saat demam dan berkeringat. Zinc membantu sistem imun melawan infeksi. Uapnya juga membantu membuka saluran pernapasan yang tersumbat.",
+          "tags": [
+            "elektrolit",
+            "imun",
+            "rehidrasi"
+          ]
+        },
+        {
+          "id": "semangka",
+          "name": "Semangka",
+          "emoji": "🍉",
+          "category": "Buah Hidrasi",
+          "timing": "Sepanjang Hari",
+          "portion": "2–3 potong besar",
+          "nutrients": [
+            "Air 92%",
+            "Lycopene",
+            "Vitamin C",
+            "Elektrolit"
+          ],
+          "why": "Kandungan air yang sangat tinggi (92%) sangat efektif untuk rehidrasi tubuh yang dehidrasi akibat demam. Lycopene adalah antioksidan kuat yang melawan infeksi. Rasanya yang manis membantu nafsu makan yang menurun saat demam.",
+          "tags": [
+            "hidrasi",
+            "antioksidan",
+            "mudah-dimakan"
+          ]
+        },
+        {
+          "id": "madu_lemon",
+          "name": "Madu + Lemon",
+          "emoji": "🍋",
+          "category": "Minuman Terapeutik",
+          "timing": "Pagi / Malam sebelum tidur",
+          "portion": "1 sendok madu + air perasan 1/2 lemon",
+          "nutrients": [
+            "Antibakteri alami",
+            "Vitamin C",
+            "Antioksidan",
+            "Enzim"
+          ],
+          "why": "Madu memiliki sifat antibakteri dan antiviral alami. Mengandung hidrogen peroksida alami yang membunuh bakteri. Dikombinasikan dengan Vitamin C dari lemon, keduanya memperkuat sistem imun untuk melawan infeksi penyebab demam.",
+          "tags": [
+            "antibakteri",
+            "imun",
+            "antioksidan"
+          ],
+          "campuran": [
+            "Air hangat",
+            "Sedikit jahe (opsional)"
+          ],
+          "resep": [
+            "Peras setengah buah lemon ke dalam gelas.",
+            "Tambahkan 1 sendok makan madu.",
+            "Tuang air hangat (bukan mendidih, agar khasiat madu tidak rusak), aduk rata."
+          ]
+        },
+        {
+          "id": "pisang_demam",
+          "name": "Pisang",
+          "emoji": "🍌",
+          "category": "Buah Mudah Cerna",
+          "timing": "Sarapan / Snack",
+          "portion": "1–2 buah",
+          "nutrients": [
+            "Kalium",
+            "Vitamin B6",
+            "Karbohidrat mudah cerna",
+            "Pektin"
+          ],
+          "why": "Kalium yang hilang saat demam dan berkeringat dapat digantikan oleh pisang. Mudah dicerna bahkan saat nafsu makan buruk. Karbohidratnya memberikan energi cepat yang dibutuhkan tubuh untuk melawan infeksi.",
+          "tags": [
+            "elektrolit",
+            "energi",
+            "mudah-cerna"
+          ]
+        },
+        {
+          "id": "oatmeal",
+          "name": "Oatmeal",
+          "emoji": "🥣",
+          "category": "Karbohidrat Kompleks",
+          "timing": "Sarapan",
+          "portion": "1 mangkuk",
+          "nutrients": [
+            "Beta-glucan",
+            "Zinc",
+            "Selenium",
+            "Serat Larut"
+          ],
+          "why": "Beta-glucan dalam oat adalah imunomodulator yang terbukti meningkatkan respons sistem imun. Zinc dan Selenium mendukung produksi sel darah putih untuk melawan infeksi. Mudah dicerna dan memberikan energi berkelanjutan.",
+          "tags": [
+            "imun",
+            "energi",
+            "mudah-cerna"
+          ]
+        },
+        {
+          "id": "air_kelapa",
+          "name": "Air Kelapa",
+          "emoji": "🥥",
+          "category": "Minuman Hidrasi",
+          "timing": "Sedikit-sedikit sepanjang hari",
+          "portion": "1 gelas",
+          "nutrients": [
+            "Cairan",
+            "Kalium",
+            "Elektrolit"
+          ],
+          "why": "Air kelapa dapat menjadi pilihan minuman untuk membantu menambah cairan dan kalium. Tetap utamakan air putih dan sesuaikan dengan kondisi kesehatanmu.",
+          "tags": [
+            "hidrasi",
+            "elektrolit",
+            "rehidrasi"
+          ]
+        },
+        {
+          "id": "bubur_nasi",
+          "name": "Bubur Nasi",
+          "emoji": "🍚",
+          "category": "Makanan Mudah Cerna",
+          "timing": "Sarapan / Makan Siang",
+          "portion": "1 mangkuk",
+          "nutrients": [
+            "Karbohidrat",
+            "Cairan",
+            "Energi"
+          ],
+          "why": "Tekstur lembut dan rasa yang ringan membuat bubur lebih mudah dikonsumsi ketika nafsu makan menurun. Tambahkan protein lembut bila mampu.",
+          "tags": [
+            "mudah-dimakan",
+            "mudah-cerna",
+            "energi"
+          ],
+          "campuran": [
+            "Suwiran ayam",
+            "Telur kocok",
+            "Daun bawang"
+          ],
+          "resep": [
+            "Masak nasi dengan air lebih banyak dari biasanya hingga teksturnya lembek.",
+            "Aduk perlahan sambil dimasak dengan api kecil agar tidak gosong.",
+            "Sajikan hangat, tambahkan topping sesuai selera dan nafsu makan."
+          ]
+        },
+        {
+          "id": "pepaya_demam",
+          "name": "Pepaya",
+          "emoji": "🍊",
+          "category": "Buah Lembut",
+          "timing": "Snack",
+          "portion": "1 mangkuk kecil",
+          "nutrients": [
+            "Vitamin C",
+            "Vitamin A",
+            "Air",
+            "Serat"
+          ],
+          "why": "Pepaya bertekstur lembut dan mengandung air serta vitamin, sehingga bisa menjadi pilihan ringan saat tubuh membutuhkan asupan yang mudah dikonsumsi.",
+          "tags": [
+            "mudah-dimakan",
+            "hidrasi",
+            "antioksidan"
+          ]
+        },
+        {
+          "id": "air_putih_hangat",
+          "name": "Air Putih Hangat",
+          "emoji": "💧",
+          "category": "Minuman Hidrasi",
+          "timing": "Sedikit-sedikit sepanjang hari",
+          "portion": "1 gelas setiap kali minum",
+          "nutrients": [
+            "Cairan"
+          ],
+          "why": "Minum sedikit-sedikit tetapi sering membantu menjaga asupan cairan saat demam dan nafsu makan berkurang.",
+          "tags": [
+            "hidrasi",
+            "rehidrasi"
+          ]
+        },
+        {
+          "id": "kentang_rebus",
+          "name": "Kentang Rebus",
+          "emoji": "🥔",
+          "category": "Karbohidrat Ringan",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "1 buah sedang",
+          "nutrients": [
+            "Karbohidrat",
+            "Kalium",
+            "Vitamin C"
+          ],
+          "why": "Kentang rebus bertekstur lembut dan memberi energi tanpa perlu bumbu yang terlalu berat.",
+          "tags": [
+            "mudah-cerna",
+            "energi",
+            "elektrolit"
+          ]
+        },
+        {
+          "id": "telur_tim",
+          "name": "Telur Tim",
+          "emoji": "🍮",
+          "category": "Protein Lembut",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "1 porsi kecil",
+          "nutrients": [
+            "Protein",
+            "Vitamin B12",
+            "Kolin"
+          ],
+          "why": "Tekstur telur tim lembut dan bisa menjadi alternatif protein ketika mengunyah atau menelan terasa kurang nyaman.",
+          "tags": [
+            "mudah-dimakan",
+            "protein",
+            "energi"
+          ]
+        },
+        {
+          "id": "sup_sayur_bening",
+          "name": "Sup Sayur Bening",
+          "emoji": "🥣",
+          "category": "Sup Hidrasi",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "1 mangkuk",
+          "nutrients": [
+            "Cairan",
+            "Serat",
+            "Mineral"
+          ],
+          "why": "Kuah membantu menambah cairan, sementara sayuran memberi variasi asupan ketika tubuh mulai pulih.",
+          "tags": [
+            "hidrasi",
+            "mudah-cerna",
+            "mineral"
+          ]
+        }
+      ]
+    },
+    "flu_pilek": {
+      "label": "Flu / Pilek",
+      "icon": "🤧",
+      "description": "Makanan untuk meredakan gejala flu dan memperkuat imunitas",
+      "foods": [
+        {
+          "id": "sup_ayam",
+          "name": "Sup Ayam Hangat",
+          "emoji": "🍜",
+          "category": "Sup Hangat",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "1–2 mangkuk besar",
+          "nutrients": [
+            "Protein",
+            "Elektrolit",
+            "Anti-inflamasi",
+            "Zinc"
+          ],
+          "why": "Penelitian medis membuktikan sup ayam memiliki efek anti-inflamasi yang membantu meredakan gejala flu. Uapnya membuka sinus yang tersumbat. Kaldu kaya elektrolit menggantikan cairan yang hilang, dan proteinnya mendukung produksi antibodi.",
+          "tags": [
+            "dekongestan",
+            "imun",
+            "anti-inflamasi"
+          ],
+          "campuran": [
+            "Wortel",
+            "Seledri",
+            "Bawang putih"
+          ],
+          "resep": [
+            "Rebus potongan ayam dengan air hingga mendidih, buang buih yang muncul.",
+            "Masukkan wortel, seledri, dan bawang putih cincang, masak hingga empuk.",
+            "Bumbui dengan garam dan merica secukupnya, sajikan hangat."
+          ]
+        },
+        {
+          "id": "jeruk",
+          "name": "Jeruk / Jeruk Nipis",
+          "emoji": "🍊",
+          "category": "Buah Citrus",
+          "timing": "Sepanjang Hari",
+          "portion": "2–3 buah / jus 1 gelas",
+          "nutrients": [
+            "Vitamin C tinggi",
+            "Flavonoid",
+            "Antioksidan",
+            "Hesperidin"
+          ],
+          "why": "Vitamin C merangsang produksi dan fungsi sel darah putih (leukosit) yang merupakan tentara utama sistem imun. Hesperidin memiliki sifat antiviral. Konsumsi rutin mempersingkat durasi flu secara signifikan.",
+          "tags": [
+            "imun",
+            "antiviral",
+            "antioksidan"
+          ]
+        },
+        {
+          "id": "bawang_putih",
+          "name": "Bawang Putih",
+          "emoji": "🧄",
+          "category": "Rempah Antiviral",
+          "timing": "Tambahkan ke masakan",
+          "portion": "2–3 siung per hari",
+          "nutrients": [
+            "Allicin",
+            "Alliin",
+            "Sulfur compounds",
+            "Selenium"
+          ],
+          "why": "Allicin dalam bawang putih adalah senyawa antiviral dan antibakteri yang sangat potensial. Penelitian menunjukkan bawang putih dapat mengurangi risiko flu hingga 63% dan mempersingkat durasinya. Paling efektif dimakan mentah atau dihancurkan.",
+          "tags": [
+            "antiviral",
+            "antibakteri",
+            "imun"
+          ]
+        },
+        {
+          "id": "teh_hijau",
+          "name": "Teh Hijau",
+          "emoji": "🍵",
+          "category": "Minuman Antioksidan",
+          "timing": "2–3x sehari",
+          "portion": "1 cangkir (250ml)",
+          "nutrients": [
+            "EGCG",
+            "L-theanine",
+            "Katekin",
+            "Antioksidan"
+          ],
+          "why": "EGCG (Epigallocatechin gallate) adalah antioksidan terkuat dalam teh hijau yang terbukti menghambat replikasi virus influenza. L-theanine mendukung fungsi imun dan memberikan ketenangan tanpa rasa kantuk.",
+          "tags": [
+            "antiviral",
+            "antioksidan",
+            "imun"
+          ]
+        },
+        {
+          "id": "kacang_almond",
+          "name": "Kacang Almond",
+          "emoji": "🌰",
+          "category": "Kacang-kacangan",
+          "timing": "Snack",
+          "portion": "Segenggam (23 butir / 28g)",
+          "nutrients": [
+            "Vitamin E",
+            "Zinc",
+            "Magnesium",
+            "Protein",
+            "Selenium"
+          ],
+          "why": "Vitamin E adalah antioksidan larut lemak utama yang melindungi sel imun. Penelitian menunjukkan defisiensi Vitamin E meningkatkan kerentanan terhadap infeksi. Zinc mempercepat penyembuhan dan mendukung produksi sel T yang melawan virus.",
+          "tags": [
+            "imun",
+            "antioksidan",
+            "antiviral"
+          ]
+        },
+        {
+          "id": "jahe_flu",
+          "name": "Wedang Jahe Hangat",
+          "emoji": "🫚",
+          "category": "Minuman Hangat",
+          "timing": "Pagi / Sore",
+          "portion": "1 cangkir",
+          "nutrients": [
+            "Gingerol",
+            "Cairan",
+            "Antioksidan"
+          ],
+          "why": "Minuman hangat membantu memberi rasa nyaman pada hidung dan tenggorokan. Jahe menambah cita rasa dan antioksidan; hentikan bila membuat perut tidak nyaman.",
+          "tags": [
+            "dekongestan",
+            "anti-inflamasi",
+            "antioksidan"
+          ],
+          "campuran": [
+            "Madu",
+            "Serai",
+            "Perasan jeruk nipis"
+          ],
+          "resep": [
+            "Memarkan 2-3 ruas jahe, rebus dengan 2 gelas air selama 10 menit.",
+            "Saring air rebusan ke dalam gelas.",
+            "Tambahkan madu dan perasan jeruk nipis, aduk dan minum selagi hangat."
+          ]
+        },
+        {
+          "id": "madu_hangat",
+          "name": "Madu dalam Air Hangat",
+          "emoji": "🍯",
+          "category": "Minuman Penyejuk Tenggorokan",
+          "timing": "Malam / Saat tenggorokan terasa tidak nyaman",
+          "portion": "1 sdt dalam 1 cangkir",
+          "nutrients": [
+            "Karbohidrat",
+            "Antioksidan"
+          ],
+          "why": "Madu dapat membantu memberi rasa lega sementara pada tenggorokan yang mengganggu. Jangan diberikan kepada bayi di bawah satu tahun.",
+          "tags": [
+            "anti-inflamasi",
+            "mudah-dimakan"
+          ]
+        },
+        {
+          "id": "jambu_flu",
+          "name": "Jambu Biji Merah",
+          "emoji": "🍐",
+          "category": "Buah Kaya Vitamin C",
+          "timing": "Snack",
+          "portion": "1 buah sedang",
+          "nutrients": [
+            "Vitamin C",
+            "Serat",
+            "Air",
+            "Antioksidan"
+          ],
+          "why": "Jambu biji menambah vitamin C dan serat dalam bentuk buah. Pilih potongan yang mudah dimakan dan jangan memaksakan diri jika tenggorokan sedang sensitif.",
+          "tags": [
+            "imun",
+            "antioksidan",
+            "antiviral"
+          ]
+        },
+        {
+          "id": "air_putih_flu",
+          "name": "Air Putih",
+          "emoji": "💧",
+          "category": "Minuman Hidrasi",
+          "timing": "Sepanjang hari",
+          "portion": "1 gelas secara berkala",
+          "nutrients": [
+            "Cairan"
+          ],
+          "why": "Asupan cairan membantu menjaga tenggorokan tetap nyaman dan mengganti cairan yang hilang saat pilek atau demam.",
+          "tags": [
+            "hidrasi",
+            "rehidrasi"
+          ]
+        },
+        {
+          "id": "bubur_flu",
+          "name": "Bubur Ayam Ringan",
+          "emoji": "🍚",
+          "category": "Makanan Hangat",
+          "timing": "Sarapan / Makan Siang",
+          "portion": "1 mangkuk",
+          "nutrients": [
+            "Karbohidrat",
+            "Protein",
+            "Cairan"
+          ],
+          "why": "Bubur hangat bertekstur lembut dan dapat diberi lauk secukupnya ketika nafsu makan sedang turun.",
+          "tags": [
+            "mudah-dimakan",
+            "mudah-cerna",
+            "imun"
+          ]
+        },
+        {
+          "id": "kiwi",
+          "name": "Kiwi",
+          "emoji": "🥝",
+          "category": "Buah Kaya Vitamin",
+          "timing": "Snack",
+          "portion": "1–2 buah",
+          "nutrients": [
+            "Vitamin C",
+            "Serat",
+            "Kalium"
+          ],
+          "why": "Kiwi menambah variasi buah dan vitamin C dalam menu harian.",
+          "tags": [
+            "imun",
+            "antioksidan",
+            "antiviral"
+          ]
+        },
+        {
+          "id": "susu_hangat",
+          "name": "Susu Hangat",
+          "emoji": "🥛",
+          "category": "Minuman Protein",
+          "timing": "Malam",
+          "portion": "1 gelas",
+          "nutrients": [
+            "Protein",
+            "Kalsium",
+            "Vitamin D"
+          ],
+          "why": "Susu hangat bisa menjadi pilihan sebelum tidur bila cocok dengan pencernaanmu dan tidak memperberat rasa tidak nyaman.",
+          "tags": [
+            "protein",
+            "mudah-dimakan"
+          ]
+        }
+      ]
+    },
+    "peradangan": {
+      "label": "Peradangan / Arthritis",
+      "icon": "🔥",
+      "description": "Makanan anti-inflamasi untuk mengurangi peradangan dan nyeri sendi",
+      "foods": [
+        {
+          "id": "ikan_sarden",
+          "name": "Ikan Sarden",
+          "emoji": "🐠",
+          "category": "Ikan Berlemak",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "100g (1 kaleng kecil)",
+          "nutrients": [
+            "Omega-3 EPA & DHA",
+            "Protein",
+            "Vitamin D",
+            "Kalsium"
+          ],
+          "why": "EPA dan DHA adalah asam lemak omega-3 yang secara langsung menghambat enzim COX-2, yaitu pemicu utama peradangan (sama seperti mekanisme obat ibuprofen, namun alami). Konsumsi rutin signifikan mengurangi nyeri sendi dan kekakuan.",
+          "tags": [
+            "anti-inflamasi",
+            "sendi",
+            "omega-3"
+          ]
+        },
+        {
+          "id": "ceri",
+          "name": "Ceri Merah",
+          "emoji": "🍒",
+          "category": "Buah Anti-Inflamasi",
+          "timing": "Snack / Sarapan",
+          "portion": "1 cangkir (150g)",
+          "nutrients": [
+            "Anthocyanin",
+            "Quercetin",
+            "Vitamin C",
+            "Antioksidan"
+          ],
+          "why": "Ceri adalah salah satu makanan paling efektif untuk peradangan. Anthocyanin-nya menghambat jalur inflamasi NF-kB. Studi klinis menunjukkan konsumsi ceri mengurangi kadar asam urat dan menurunkan frekuensi serangan gout secara dramatis.",
+          "tags": [
+            "anti-inflamasi",
+            "sendi",
+            "gout"
+          ]
+        },
+        {
+          "id": "minyak_zaitun",
+          "name": "Minyak Zaitun Extra Virgin",
+          "emoji": "🫒",
+          "category": "Lemak Sehat",
+          "timing": "Setiap Waktu Masak / Dressing",
+          "portion": "1–2 sdm per sajian",
+          "nutrients": [
+            "Oleocanthal",
+            "Oleuropein",
+            "Vitamin E",
+            "Polifenol"
+          ],
+          "why": "Oleocanthal dalam minyak zaitun memiliki mekanisme anti-inflamasi yang identik dengan ibuprofen, yaitu menghambat enzim COX-1 dan COX-2. Polifenolnya melindungi sel dari kerusakan oksidatif yang memperparah peradangan.",
+          "tags": [
+            "anti-inflamasi",
+            "sendi",
+            "otak"
+          ]
+        },
+        {
+          "id": "biji_chia",
+          "name": "Biji Chia",
+          "emoji": "🌱",
+          "category": "Biji-bijian Super",
+          "timing": "Sarapan / Snack",
+          "portion": "2 sdm (28g)",
+          "nutrients": [
+            "Omega-3 ALA",
+            "Serat",
+            "Antioksidan",
+            "Kalsium",
+            "Magnesium"
+          ],
+          "why": "Biji chia adalah sumber omega-3 terbaik dari nabati. ALA (Alpha-linolenic acid) diubah tubuh menjadi EPA dan DHA untuk mengurangi peradangan. Seratnya juga mendukung mikrobiom usus yang sehat, yang berperan penting dalam regulasi peradangan sistemik.",
+          "tags": [
+            "anti-inflamasi",
+            "serat",
+            "omega-3"
+          ]
+        },
+        {
+          "id": "anggur_merah",
+          "name": "Anggur Merah",
+          "emoji": "🍇",
+          "category": "Buah Antioksidan",
+          "timing": "Snack",
+          "portion": "1 cangkir (150g)",
+          "nutrients": [
+            "Resveratrol",
+            "Quercetin",
+            "Vitamin C",
+            "Anthocyanin"
+          ],
+          "why": "Resveratrol adalah senyawa unik dalam kulit anggur merah yang terbukti menghambat jalur inflamasi NF-kB dan COX-2. Juga bersifat kardioprotektif. Konsumsi anggur merah segar (bukan wine) memberikan manfaat penuh tanpa efek alkohol.",
+          "tags": [
+            "anti-inflamasi",
+            "antioksidan",
+            "sendi"
+          ]
+        },
+        {
+          "id": "kunyit_peradangan",
+          "name": "Kunyit dalam Masakan",
+          "emoji": "🌿",
+          "category": "Rempah",
+          "timing": "Saat memasak",
+          "portion": "Secukupnya sebagai bumbu",
+          "nutrients": [
+            "Curcumin",
+            "Antioksidan"
+          ],
+          "why": "Kunyit dapat menambah cita rasa dan senyawa antioksidan pada makanan. Gunakan sebagai bagian dari pola makan, bukan pengganti obat yang diresepkan.",
+          "tags": [
+            "anti-inflamasi",
+            "antioksidan",
+            "pereda-nyeri"
+          ],
+          "campuran": [
+            "Susu hangat",
+            "Sedikit lada hitam (bantu penyerapan)"
+          ],
+          "resep": [
+            "Parut atau haluskan 1 ruas kunyit segar.",
+            "Rebus dengan susu selama 5 menit dengan api kecil.",
+            "Saring, tambahkan sedikit madu jika suka, minum hangat sebelum tidur."
+          ]
+        },
+        {
+          "id": "kenari",
+          "name": "Kacang Kenari",
+          "emoji": "🌰",
+          "category": "Kacang-kacangan",
+          "timing": "Snack / Taburan Salad",
+          "portion": "Segenggam kecil",
+          "nutrients": [
+            "Omega-3 Nabati",
+            "Magnesium",
+            "Protein",
+            "Lemak Sehat"
+          ],
+          "why": "Kenari memberi lemak tak jenuh, protein, dan omega-3 nabati yang dapat melengkapi pola makan seimbang untuk mendukung kesehatan umum.",
+          "tags": [
+            "anti-inflamasi",
+            "omega-3",
+            "sendi"
+          ]
+        },
+        {
+          "id": "tomat",
+          "name": "Tomat",
+          "emoji": "🍅",
+          "category": "Sayuran Buah",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "1–2 buah sedang",
+          "nutrients": [
+            "Likopen",
+            "Vitamin C",
+            "Kalium",
+            "Air"
+          ],
+          "why": "Tomat menambah likopen, vitamin C, dan cairan pada menu harian. Konsumsi sebagai bagian dari variasi sayur dan buah, bukan sebagai terapi tunggal.",
+          "tags": [
+            "antioksidan",
+            "anti-inflamasi",
+            "sendi"
+          ]
+        },
+        {
+          "id": "alpukat_sendi",
+          "name": "Alpukat",
+          "emoji": "🥑",
+          "category": "Lemak Sehat",
+          "timing": "Sarapan / Snack",
+          "portion": "½ buah",
+          "nutrients": [
+            "Lemak Tak Jenuh",
+            "Vitamin E",
+            "Kalium"
+          ],
+          "why": "Alpukat membantu menambah lemak tak jenuh dan kalium dalam menu yang mengutamakan bahan utuh.",
+          "tags": [
+            "anti-inflamasi",
+            "lemak-sehat",
+            "sendi"
+          ]
+        },
+        {
+          "id": "kacang_kedelai_sendi",
+          "name": "Tempe Panggang",
+          "emoji": "🍘",
+          "category": "Protein Nabati",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "3–4 potong",
+          "nutrients": [
+            "Protein",
+            "Serat",
+            "Probiotik"
+          ],
+          "why": "Tempe memberi protein nabati dan serat sehingga menu tetap beragam tanpa harus selalu menggunakan daging.",
+          "tags": [
+            "anti-inflamasi",
+            "protein",
+            "serat"
+          ]
+        },
+        {
+          "id": "sayur_hijau_sendi",
+          "name": "Sayur Hijau",
+          "emoji": "🥬",
+          "category": "Sayuran Hijau",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "1–2 mangkuk",
+          "nutrients": [
+            "Vitamin K",
+            "Magnesium",
+            "Folat"
+          ],
+          "why": "Sayur hijau menambah mineral dan serat yang mendukung pola makan seimbang.",
+          "tags": [
+            "anti-inflamasi",
+            "mineral",
+            "serat"
+          ]
+        },
+        {
+          "id": "teh_hijau_sendi",
+          "name": "Teh Hijau",
+          "emoji": "🍵",
+          "category": "Minuman Antioksidan",
+          "timing": "Pagi / Sore",
+          "portion": "1 cangkir",
+          "nutrients": [
+            "Katekin",
+            "Antioksidan"
+          ],
+          "why": "Teh hijau dapat menambah variasi minuman tanpa gula; hindari jika kafein memicu keluhanmu.",
+          "tags": [
+            "antioksidan",
+            "polifenol"
+          ]
+        }
+      ]
+    },
+    "pemulihan_umum": {
+      "label": "Pemulihan Umum / Pasca Sakit",
+      "icon": "💪",
+      "description": "Makanan bergizi lengkap untuk mempercepat pemulihan kesehatan secara menyeluruh",
+      "foods": [
+        {
+          "id": "nasi_merah",
+          "name": "Nasi Merah",
+          "emoji": "🍚",
+          "category": "Karbohidrat Kompleks",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "3/4–1 cangkir (nasi matang)",
+          "nutrients": [
+            "Karbohidrat Kompleks",
+            "Serat",
+            "Magnesium",
+            "Vitamin B",
+            "Mangan"
+          ],
+          "why": "Nasi merah memberikan energi yang dilepaskan secara perlahan (low glycemic index), menjaga kadar gula darah stabil selama pemulihan. Seratnya mendukung pencernaan yang sehat. Vitamin B kompleksnya penting untuk metabolisme energi dan fungsi saraf.",
+          "tags": [
+            "energi",
+            "pencernaan",
+            "nutrisi-seimbang"
+          ]
+        },
+        {
+          "id": "dada_ayam",
+          "name": "Dada Ayam",
+          "emoji": "🍗",
+          "category": "Protein Rendah Lemak",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "100–150g",
+          "nutrients": [
+            "Protein tinggi",
+            "Vitamin B3 & B6",
+            "Selenium",
+            "Fosfor"
+          ],
+          "why": "Protein adalah bahan bangunan utama untuk semua perbaikan jaringan tubuh. Dada ayam memberikan protein berkualitas tinggi dengan lemak minimal. Selenium-nya mendukung sistem imun dan berfungsi sebagai antioksidan penting.",
+          "tags": [
+            "protein",
+            "pemulihan-jaringan",
+            "imun"
+          ]
+        },
+        {
+          "id": "ubi_jalar",
+          "name": "Ubi Jalar",
+          "emoji": "🍠",
+          "category": "Karbohidrat Bergizi",
+          "timing": "Sarapan / Makan Siang",
+          "portion": "1 buah sedang (150g)",
+          "nutrients": [
+            "Beta-karoten",
+            "Vitamin A",
+            "Vitamin C",
+            "Kalium",
+            "Serat"
+          ],
+          "why": "Beta-karoten diubah menjadi Vitamin A yang krusial untuk integritas membran mukosa (pertahanan pertama tubuh). Juga berperan dalam produksi sel darah putih. Antioksidannya melindungi sel yang sedang dalam proses penyembuhan.",
+          "tags": [
+            "imun",
+            "antioksidan",
+            "pemulihan"
+          ]
+        },
+        {
+          "id": "tempe",
+          "name": "Tempe",
+          "emoji": "🟫",
+          "category": "Protein Nabati Fermentasi",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "100g",
+          "nutrients": [
+            "Protein nabati lengkap",
+            "Probiotik",
+            "Isoflavon",
+            "Zinc",
+            "Zat Besi"
+          ],
+          "why": "Tempe adalah superfood lokal Indonesia. Probiotik dari fermentasinya memulihkan mikrobiom usus yang terganggu akibat sakit atau antibiotik. Isoflavon bersifat anti-inflamasi. Mengandung protein nabati lengkap yang membantu pemulihan otot.",
+          "tags": [
+            "probiotik",
+            "protein",
+            "anti-inflamasi"
+          ]
+        },
+        {
+          "id": "wortel",
+          "name": "Wortel",
+          "emoji": "🥕",
+          "category": "Sayur Bergizi",
+          "timing": "Setiap Waktu Makan",
+          "portion": "1–2 buah sedang",
+          "nutrients": [
+            "Beta-karoten",
+            "Vitamin A",
+            "Biotin",
+            "Vitamin K1",
+            "Kalium"
+          ],
+          "why": "Kaya beta-karoten yang mendukung sistem imun dan kesehatan mata. Biotin penting untuk metabolisme lemak dan karbohidrat, mendukung pemulihan energi. Mudah dicerna dan bisa dimakan dalam berbagai cara (mentah, kukus, sup).",
+          "tags": [
+            "imun",
+            "antioksidan",
+            "serbaguna"
+          ]
+        },
+        {
+          "id": "kacang_hijau",
+          "name": "Kacang Hijau",
+          "emoji": "🫛",
+          "category": "Legum Bergizi",
+          "timing": "Sarapan / Snack",
+          "portion": "1 cangkir (bubur/rebus)",
+          "nutrients": [
+            "Protein nabati",
+            "Zat Besi",
+            "Magnesium",
+            "Folat",
+            "Serat"
+          ],
+          "why": "Kacang hijau kaya zat besi yang membantu mengatasi anemia akibat perdarahan atau sakit berkepanjangan. Folat mendukung produksi sel darah merah baru. Proteinnya membantu pemulihan, dan seratnya menjaga kesehatan pencernaan.",
+          "tags": [
+            "zat-besi",
+            "protein",
+            "energi"
+          ]
+        },
+        {
+          "id": "telur_pemulihan",
+          "name": "Telur",
+          "emoji": "🥚",
+          "category": "Protein Lengkap",
+          "timing": "Sarapan / Makan Siang",
+          "portion": "1–2 butir",
+          "nutrients": [
+            "Protein",
+            "Vitamin B12",
+            "Kolin",
+            "Leucine"
+          ],
+          "why": "Telur membantu menambah protein dalam menu yang sederhana. Pilih cara masak yang sesuai dengan kebiasaan dan kondisi kesehatanmu.",
+          "tags": [
+            "protein",
+            "pemulihan-jaringan",
+            "energi"
+          ]
+        },
+        {
+          "id": "pepaya_pulih",
+          "name": "Pepaya",
+          "emoji": "🍊",
+          "category": "Buah Lembut",
+          "timing": "Snack / Sarapan",
+          "portion": "1 mangkuk kecil",
+          "nutrients": [
+            "Vitamin C",
+            "Vitamin A",
+            "Serat",
+            "Air"
+          ],
+          "why": "Pepaya bertekstur lembut dan bisa membantu menambah buah serta serat ketika nafsu makan belum sepenuhnya kembali.",
+          "tags": [
+            "mudah-cerna",
+            "pencernaan",
+            "antioksidan"
+          ]
+        },
+        {
+          "id": "ikan_kembung",
+          "name": "Ikan Kembung",
+          "emoji": "🐟",
+          "category": "Protein & Lemak Sehat",
+          "timing": "Makan Siang / Makan Malam",
+          "portion": "1 ekor sedang",
+          "nutrients": [
+            "Protein",
+            "Omega-3",
+            "Vitamin D",
+            "Selenium"
+          ],
+          "why": "Ikan kembung menambah protein dan lemak sehat dengan bahan yang mudah ditemukan. Sajikan dengan sayur dan sumber karbohidrat agar lebih seimbang.",
+          "tags": [
+            "protein",
+            "pemulihan-jaringan",
+            "anti-inflamasi"
+          ]
+        },
+        {
+          "id": "oat_pisang",
+          "name": "Oatmeal Pisang",
+          "emoji": "🥣",
+          "category": "Sarapan Praktis",
+          "timing": "Sarapan",
+          "portion": "1 mangkuk",
+          "nutrients": [
+            "Karbohidrat",
+            "Serat",
+            "Kalium"
+          ],
+          "why": "Oatmeal pisang memberi energi bertahap dengan tekstur yang mudah disesuaikan.",
+          "tags": [
+            "energi",
+            "mudah-cerna",
+            "pencernaan"
+          ],
+          "campuran": [
+            "Kacang almond cincang",
+            "Madu",
+            "Kayu manis bubuk"
+          ],
+          "resep": [
+            "Masak oatmeal dengan air atau susu sesuai petunjuk kemasan.",
+            "Hancurkan setengah pisang, campurkan ke dalam oatmeal panas.",
+            "Taburi kacang almond cincang dan kayu manis, tambahkan madu di atasnya."
+          ]
+        },
+        {
+          "id": "yogurt_plain",
+          "name": "Yogurt Plain",
+          "emoji": "🥛",
+          "category": "Produk Fermentasi",
+          "timing": "Sarapan / Snack",
+          "portion": "1 cup kecil",
+          "nutrients": [
+            "Protein",
+            "Kalsium",
+            "Probiotik"
+          ],
+          "why": "Yogurt dapat menjadi pilihan protein dan probiotik bila cocok dengan pencernaanmu.",
+          "tags": [
+            "protein",
+            "probiotik",
+            "pencernaan"
+          ]
+        },
+        {
+          "id": "kacang_hijau_pulih",
+          "name": "Bubur Kacang Hijau",
+          "emoji": "🍵",
+          "category": "Protein Nabati",
+          "timing": "Snack / Sarapan",
+          "portion": "1 mangkuk kecil",
+          "nutrients": [
+            "Protein",
+            "Zat Besi",
+            "Serat"
+          ],
+          "why": "Kacang hijau menambah protein nabati dan energi; pilih versi dengan gula secukupnya.",
+          "tags": [
+            "protein",
+            "energi",
+            "zat-besi"
+          ],
+          "campuran": [
+            "Santan encer",
+            "Gula merah/madu",
+            "Jahe"
+          ],
+          "resep": [
+            "Rendam kacang hijau selama 1-2 jam agar lebih cepat empuk saat dimasak.",
+            "Rebus kacang hijau dengan air dan sedikit jahe hingga empuk.",
+            "Tambahkan santan encer dan pemanis, masak sebentar lagi, sajikan hangat."
+          ]
+        },
+        {
+          "id": "jeruk_pulih",
+          "name": "Jeruk",
+          "emoji": "🍊",
+          "category": "Buah Segar",
+          "timing": "Snack",
+          "portion": "1–2 buah",
+          "nutrients": [
+            "Vitamin C",
+            "Air",
+            "Serat"
+          ],
+          "why": "Jeruk membantu menambah variasi buah dan cairan pada menu pemulihan.",
+          "tags": [
+            "antioksidan",
+            "hidrasi",
+            "imun"
+          ]
+        }
+      ]
+    }
+  }
+}

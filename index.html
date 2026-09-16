@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Recovra — Aplikasi pemantauan kesehatan dan pemulihan cedera dengan rekomendasi nutrisi cerdas, manajemen jadwal, dan kalender interaktif.">
+  <title>Recovra — Pemantau Kesehatan & Pemulihan</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
+
+  <!-- Modal Overlay -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal" id="modal-content"></div>
+  </div>
+
+  <!-- Recovra AI conversation action modal -->
+  <div id="chat-action-modal" class="chatai-action-modal-overlay" aria-hidden="true">
+    <div class="chatai-action-modal" role="dialog" aria-modal="true" aria-labelledby="chat-action-modal-title">
+      <div id="chat-action-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Popup menu opsi percakapan (satu shared node, posisinya diatur JS biar gak keclip sidebar) -->
+  <div id="chatai-context-menu-portal" class="chatai-context-menu" onclick="event.stopPropagation()"></div>
+
+  <!-- APP -->
+  <div class="app">
+
+    <!-- LEFT SIDEBAR — hover to expand -->
+    <aside class="sidebar left-sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">✦</div>
+        <div class="logo-text">
+          <strong>Recovra</strong>
+          <span>Pemulihan Sehat</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Utama</div>
+
+        <nav class="navigation" id="sidebar-navigation" aria-label="Navigasi utama">
+          <button type="button" class="nav-item active" data-page="dashboard" onclick="App.navigate('dashboard')">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M3.5 10.8 12 3.7l8.5 7.1v8.7a1.8 1.8 0 0 1-1.8 1.8H5.3a1.8 1.8 0 0 1-1.8-1.8z"/><path d="M9.2 21.3v-6.1h5.6v6.1"/></svg>
+            </span>
+            <span class="nav-label">Dashboard</span>
+          </button>
+
+          <button type="button" class="nav-item" data-page="checkup" onclick="App.navigate('checkup')">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2 20 20"/><path d="M10.5 8v5M8 10.5h5"/></svg>
+            </span>
+            <span class="nav-label">Cek Kondisi</span>
+          </button>
+
+          <button type="button" class="nav-item" data-page="health" onclick="App.navigate('health')">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8.4"/><path d="M4.4 12h3.1l1.6-3.1 2.4 6.2 1.8-4 1.3 2.1h4.9"/></svg>
+            </span>
+            <span class="nav-label">Kesehatan</span>
+          </button>
+
+          <button type="button" class="nav-item" data-page="healthhub" onclick="App.navigate('healthhub')">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12h8M12 8v8"/></svg>
+            </span>
+            <span class="nav-label">Health Hub</span>
+          </button>
+
+          <button type="button" class="nav-item" data-page="nutrition" onclick="App.navigate('nutrition')">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M20.1 4.2C13.7 3.7 7.4 6.2 5.4 11.2c-1.4 3.5.5 6.8 3.9 6.9 5.4.2 8.5-5.4 10.8-13.9Z"/><path d="M5.9 18.1c2.3-3.4 5.4-6 9.6-8.3"/></svg>
+            </span>
+            <span class="nav-label">Nutrisi</span>
+          </button>
+          <button type="button" class="nav-item" data-page="medicine" onclick="App.navigate('medicine')">
+            <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m8.5 5.5 10 10a3.5 3.5 0 0 1-5 5l-10-10a3.5 3.5 0 0 1 5-5Z"/><path d="m6 8 5-5a3.5 3.5 0 0 1 5 5l-5 5"/><path d="m7.5 10.5 4-4"/></svg></span>
+            <span class="nav-label">Medicine</span>
+          </button>
+
+          <button type="button" class="nav-item" data-page="activity" onclick="App.navigate('activity')">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M5 18.5 9.2 14l3.1 2.2L19 8.8"/><path d="M14.8 8.8H19v4.2"/></svg>
+            </span>
+            <span class="nav-label">Aktivitas</span>
+          </button>
+
+          <button type="button" class="nav-item" data-page="calendar" onclick="App.navigate('calendar')">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5.5" width="16" height="14" rx="2.5"/><path d="M8 3.8v3.4M16 3.8v3.4M4 10h16"/><path d="M8 13.5h.01M12 13.5h.01M16 13.5h.01M8 17h.01M12 17h.01"/></svg>
+            </span>
+            <span class="nav-label">Jadwal</span>
+          </button>
+
+          <button type="button" class="nav-item" data-page="chatai" onclick="App.navigate('chatai')">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H10l-4.2 3.5a.6.6 0 0 1-1-.46V16H6.5A2.5 2.5 0 0 1 4 13.5z"/></svg>
+            </span>
+            <span class="nav-label">Asisten AI</span>
+          </button>
+
+          <button type="button" class="nav-item" data-page="notifications" onclick="App.navigate('notifications')">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M6.5 16.8h11l-1.2-1.8V10a4.3 4.3 0 0 0-8.6 0v5Z"/><path d="M9.5 18.2a2.6 2.6 0 0 0 5 0M12 4.2v-1"/></svg>
+            </span>
+            <span class="nav-label">Pengingat</span>
+            <span class="nav-badge" id="badge-count" style="display:none">0</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div class="user-avatar" id="user-avatar-text">P</div>
+          <div class="user-info">
+            <strong id="sidebar-username">Pengguna</strong>
+            <span id="sidebar-condition">Pemulihan Umum</span>
+            <span id="sidebar-recovery-day" class="sidebar-recovery-day"></span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- BOTTOM FLOATING NAVIGATION -->
+    <aside class="bottom-navigation" aria-label="Navigasi cepat">
+      <div class="sidebar-section">
+        <nav class="navigation" id="bottom-navigation" aria-label="Navigasi bawah">
+          <button type="button" class="nav-item active" data-page="dashboard" onclick="App.navigate('dashboard')" aria-label="Dashboard">
+            <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3.5 10.8 12 3.7l8.5 7.1v8.7a1.8 1.8 0 0 1-1.8 1.8H5.3a1.8 1.8 0 0 1-1.8-1.8z"/><path d="M9.2 21.3v-6.1h5.6v6.1"/></svg></span>
+            <span class="nav-label">Dashboard</span>
+          </button>
+          <button type="button" class="nav-item" data-page="checkup" onclick="App.navigate('checkup')" aria-label="Cek Kondisi">
+            <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="10.5" cy="10.5" r="6.3"/><path d="M15.2 15.2 20 20"/><path d="M10.5 8v5M8 10.5h5"/></svg></span>
+            <span class="nav-label">Cek Kondisi</span>
+          </button>
+          <button type="button" class="nav-item" data-page="chatai" onclick="App.navigate('chatai')" aria-label="Asisten AI">
+            <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H10l-4.2 3.5a.6.6 0 0 1-1-.46V16H6.5A2.5 2.5 0 0 1 4 13.5z"/></svg></span>
+            <span class="nav-label">Asisten AI</span>
+          </button>
+          <button type="button" class="nav-item" data-page="calendar" onclick="App.navigate('calendar')" aria-label="Jadwal">
+            <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5.5" width="16" height="14" rx="2.5"/><path d="M8 3.8v3.4M16 3.8v3.4M4 10h16"/><path d="M8 13.5h.01M12 13.5h.01M16 13.5h.01M8 17h.01M12 17h.01"/></svg></span>
+            <span class="nav-label">Jadwal</span>
+          </button>
+          <button type="button" class="nav-item" data-page="notifications" onclick="App.navigate('notifications')" aria-label="Pengingat">
+            <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M6.5 16.8h11l-1.2-1.8V10a4.3 4.3 0 0 0-8.6 0v5Z"/><path d="M9.5 18.2a2.6 2.6 0 0 0 5 0M12 4.2v-1"/></svg></span>
+            <span class="nav-label">Pengingat</span>
+            <span class="nav-badge" id="bottom-badge-count" style="display:none">0</span>
+          </button>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+      <!-- HEADER -->
+      <header class="header">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button class="menu-toggle" onclick="App.toggleSidebar()" id="menu-toggle">☰</button>
+          <div class="header-brand-mark" aria-hidden="true">✦</div>
+          <div class="header-left">
+            <div class="header-title" id="header-title">Dashboard</div>
+            <div class="header-subtitle" id="header-subtitle">Selamat datang kembali</div>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="header-date-badge" id="header-date">--</div>
+          <button class="header-btn" onclick="App.navigate('notifications')" data-tooltip="Pengingat">
+            🔔
+            <span class="dot" id="notif-dot" style="display:none"></span>
+          </button>
+          <button class="header-btn" onclick="App.openSettingsModal()" data-tooltip="Pengaturan">⚙️</button>
+        </div>
+      </header>
+
+      <!-- CONTENT AREA -->
+      <main class="content">
+
+        <!-- =================== DASHBOARD PAGE =================== -->
+        <section class="page active" id="page-dashboard">
+          <!-- Welcome Banner -->
+          <div class="welcome-banner">
+            <div class="welcome-text">
+              <h2>Halo, <span id="welcome-name">Pengguna</span>! 👋</h2>
+              <p id="welcome-message">Pantau kesehatan dan jadwal pemulihanmu hari ini.</p>
+            </div>
+            <div class="welcome-emoji" id="welcome-emoji">💪</div>
+          </div>
+
+          <!-- Floating Chatbot Widget dipindah jadi halaman "Asisten AI" tersendiri di sidebar -->
+
+
+          <!-- Recovery Center: the dashboard answers the four questions from the brief. -->
+          <section class="recovery-overview mb-24" aria-label="Ringkasan pemulihan hari ini">
+            <div class="recovery-score-card" onclick="App.showScoreBreakdown()" style="cursor:pointer;" title="Klik untuk lihat rincian skor">
+              <div class="recovery-card-kicker">HOW AM I?</div>
+              <div class="recovery-score-line"><strong id="recovery-score-value">82</strong><span>/100</span></div>
+              <div class="recovery-score-status" id="recovery-score-status">Kondisimu terlihat cukup stabil hari ini.</div>
+              <div class="recovery-score-meter"><span id="recovery-score-meter-fill" style="width:82%"></span></div>
+              <div class="recovery-score-meta"><span>Recovery Score</span><span id="recovery-score-meta">Berdasarkan catatan terakhirmu</span></div>
+            </div>
+            <div class="recovery-answer-card answer-change"><div class="recovery-card-kicker">WHAT CHANGED?</div><h3 id="recovery-change-title">Belum ada perubahan</h3><p id="recovery-change-text">Mulai check-in untuk membandingkan kondisi hari ini.</p><span class="answer-arrow">↘</span></div>
+            <div class="recovery-answer-card answer-do"><div class="recovery-card-kicker">WHAT SHOULD I DO?</div><h3 id="recovery-action-title">Check-in kondisi</h3><p id="recovery-action-text">Catat kondisi tubuhmu hari ini untuk mendapat saran yang lebih personal.</p><button type="button" id="recovery-action-cta" class="btn btn-primary btn-sm recovery-cta-btn">Check-in sekarang →</button></div>
+            <div class="recovery-answer-card answer-next"><div class="recovery-card-kicker">WHAT'S NEXT?</div><h3 id="recovery-next-title">Mulai dari satu langkah</h3><p id="recovery-next-text">Tambahkan jadwal atau rencana kecil untuk hari ini.</p><span class="answer-arrow">↗</span></div>
+          </section>
+
+          <section class="recovery-lower-grid mb-24">
+            <div class="recovery-journey-card">
+              <div class="recovery-card-heading"><div><div class="recovery-card-kicker">RECOVERY JOURNEY</div><h3 id="recovery-day-title">Recovery Day 1</h3></div><span class="journey-live-dot">● Today</span></div>
+              <div class="journey-track" id="recovery-journey-track"><span class="journey-node done">W1</span><i></i><span class="journey-node done">W2</span><i></i><span class="journey-node active">W3</span><i></i><span class="journey-node">Now</span></div>
+              <div class="journey-caption"><span id="recovery-consistency">Mulai catatan pertamamu hari ini</span><strong id="recovery-journey-score">82</strong></div>
+              <div class="journey-milestones" id="recovery-milestones"></div>
+            </div>
+            <div class="recovery-today-card">
+              <div class="recovery-card-heading"><div><div class="recovery-card-kicker">TODAY</div><h3>Rencana kecil untukmu</h3></div><span class="today-count" id="today-plan-count">0/3</span></div>
+              <div id="recovery-today-plan" class="recovery-plan-list">
+                <div class="recovery-plan-item"><span>☑</span><div><strong>Check-in kondisi</strong><small>Catat bagaimana tubuhmu hari ini</small></div></div>
+                <div class="recovery-plan-item"><span>○</span><div><strong>Gerak ringan</strong><small>Lakukan sesuai batas nyamanmu</small></div></div>
+                <div class="recovery-plan-item"><span>○</span><div><strong>Istirahat cukup</strong><small>Beri ruang untuk pemulihan</small></div></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="recovery-insight-card mb-24">
+            <div class="insight-icon">✦</div><div><div class="recovery-card-kicker">INSIGHT MINGGU INI · RECOVRA AI</div><p id="recovery-insight-text">Catat kondisi hari ini untuk mendapatkan insight yang lebih personal dari Recovra.</p></div>
+          </section>
+
+          <!-- Stats Row -->
+          <div class="grid-4 mb-24">
+            <div class="stat-card primary">
+              <div class="stat-icon primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                  <path d="M20.5 8.6c0 4.8-6.2 9-8.5 10.6-2.3-1.6-8.5-5.8-8.5-10.6a4.6 4.6 0 0 1 8.5-2.5 4.6 4.6 0 0 1 8.5 2.5Z"/>
+                  <path d="M4.5 12.5h3l1.6-3 2.4 5 1.6-3.2h6.4"/>
+                </svg>
+              </div>
+              <div>
+                <div class="stat-value" id="dash-pain">—</div>
+                <div class="stat-label">Tingkat Nyeri</div>
+              </div>
+              <div class="stat-change neutral" id="dash-pain-change">Belum dicatat</div>
+            </div>
+            <div class="stat-card warm">
+              <div class="stat-icon warm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                  <path d="M12 3.5a2.2 2.2 0 0 0-2.2 2.2v8.4a4 4 0 1 0 4.4 0V5.7A2.2 2.2 0 0 0 12 3.5Z"/>
+                  <path d="M12 9.5v5.6"/>
+                  <circle cx="12" cy="17" r="1.4" fill="currentColor" stroke="none"/>
+                </svg>
+              </div>
+              <div>
+                <div class="stat-value" id="dash-temp">—°</div>
+                <div class="stat-label">Suhu Terakhir</div>
+              </div>
+              <div class="stat-change neutral" id="dash-temp-change">Belum dicatat</div>
+            </div>
+            <div class="stat-card secondary">
+              <div class="stat-icon secondary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                  <rect x="3.5" y="5" width="17" height="15.5" rx="3"/>
+                  <path d="M8 3v4M16 3v4M3.5 10.5h17"/>
+                  <path d="M8.5 15.2 10.6 17l4.4-4.5"/>
+                </svg>
+              </div>
+              <div>
+                <div class="stat-value" id="dash-events">0</div>
+                <div class="stat-label">Jadwal Hari Ini</div>
+              </div>
+              <div class="stat-change neutral">Lihat Kalender</div>
+            </div>
+            <div class="stat-card success">
+              <div class="stat-icon success">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                  <rect x="5" y="4.5" width="14" height="16.5" rx="2.5"/>
+                  <path d="M9 4.5V3.2a1.2 1.2 0 0 1 1.2-1.2h3.6a1.2 1.2 0 0 1 1.2 1.2v1.3"/>
+                  <path d="M8.5 10.5h7M8.5 14h7M8.5 17.5h4.5"/>
+                </svg>
+              </div>
+              <div>
+                <div class="stat-value" id="dash-logs">0</div>
+                <div class="stat-label">Total Log Kesehatan</div>
+              </div>
+              <div class="stat-change up" id="dash-logs-change">Hari ini</div>
+            </div>
+          </div>
+
+          <!-- Main Grid -->
+          <div class="grid-2 gap-20">
+            <!-- Today's Schedule -->
+            <div class="card">
+              <div class="flex-between mb-16">
+                <div>
+                  <div class="section-title" style="font-size:16px;">Jadwal Hari Ini</div>
+                  <div class="section-subtitle">Aktivitas & Pengingat</div>
+                </div>
+                <button class="btn btn-sm btn-secondary" onclick="App.navigate('calendar')">Lihat Semua</button>
+              </div>
+              <div id="today-schedule-list" class="schedule-list">
+                <div class="empty-state" id="today-schedule-empty" style="padding:24px">
+                  <div class="schedule-empty-illustration">
+                    <svg viewBox="0 0 100 100" width="88" height="88">
+                      <rect x="14" y="18" width="60" height="58" rx="10" fill="#f5f7f6"/>
+                      <rect x="14" y="18" width="60" height="16" rx="10" fill="#e2e6e4"/>
+                      <rect x="26" y="10" width="6" height="14" rx="3" fill="#c9cfcc"/>
+                      <rect x="56" y="10" width="6" height="14" rx="3" fill="#c9cfcc"/>
+                      <g fill="#c9cfcc">
+                        <rect x="24" y="42" width="8" height="8" rx="2"/>
+                        <rect x="38" y="42" width="8" height="8" rx="2"/>
+                        <rect x="52" y="42" width="8" height="8" rx="2"/>
+                        <rect x="24" y="56" width="8" height="8" rx="2"/>
+                        <rect x="38" y="56" width="8" height="8" rx="2"/>
+                      </g>
+                      <circle cx="72" cy="72" r="18" fill="var(--green)"/>
+                      <path d="M72 64v16M64 72h16" stroke="#0a2318" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <h3>Belum ada jadwal</h3>
+                  <p>Tambahkan jadwal di Kalender</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Health Trend + Recent Log -->
+            <div class="card">
+              <div class="flex-between mb-16">
+                <div>
+                  <div class="section-title" style="font-size:16px;">Tren Nyeri (7 Hari)</div>
+                  <div class="section-subtitle">Grafik skala nyeri terkini</div>
+                </div>
+                <button class="btn btn-sm btn-secondary" onclick="App.navigate('health')">Catat</button>
+              </div>
+              <canvas id="dashTrendChart" height="100"></canvas>
+              <div class="divider" style="margin:16px 0;"></div>
+              <div id="dash-recent-log">
+                <div style="text-align:center;color:var(--text-muted);font-size:13px;padding:16px 0;">Belum ada catatan
+                  kesehatan</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="card mt-20" style="margin-top:20px;">
+            <div class="section-title" style="font-size:16px;margin-bottom:16px;">Aksi Cepat</div>
+            <div class="quick-actions-grid">
+              <button class="quick-action-card" onclick="App.navigate('health')" style="--qa-color:var(--green-2);--qa-bg:var(--green-soft);">
+                <span class="quick-action-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                    <path d="M3 12h4l2-6 4 12 2-6h6"/>
+                  </svg>
+                </span>
+                <span class="quick-action-text">
+                  <strong>Catat Gejala</strong>
+                  <span>Input kondisi hari ini</span>
+                </span>
+                <svg class="quick-action-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+
+              <button class="quick-action-card" onclick="App.navigate('nutrition')" style="--qa-color:var(--green);--qa-bg:var(--green-soft);">
+                <span class="quick-action-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                    <path d="M20.1 4.2C13.7 3.7 7.4 6.2 5.4 11.2c-1.4 3.5.5 6.8 3.9 6.9 5.4.2 8.5-5.4 10.8-13.9Z"/>
+                    <path d="M5.9 18.1c2.3-3.4 5.4-6 9.6-8.3"/>
+                  </svg>
+                </span>
+                <span class="quick-action-text">
+                  <strong>Lihat Rekomendasi Makan</strong>
+                  <span>Makanan yang disarankan</span>
+                </span>
+                <svg class="quick-action-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+
+              <button class="quick-action-card" onclick="App.navigate('calendar')" style="--qa-color:var(--blue);--qa-bg:var(--blue-soft);">
+                <span class="quick-action-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                    <rect x="3.5" y="5" width="17" height="15.5" rx="3"/>
+                    <path d="M8 3v4M16 3v4M3.5 10.5h17"/>
+                  </svg>
+                </span>
+                <span class="quick-action-text">
+                  <strong>Tambah Jadwal</strong>
+                  <span>Buat jadwal baru</span>
+                </span>
+                <svg class="quick-action-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+
+              <button class="quick-action-card" onclick="App.navigate('notifications')" style="--qa-color:var(--orange);--qa-bg:var(--orange-soft);">
+                <span class="quick-action-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                    <path d="M6.5 16.8h11l-1.2-1.8V10a4.3 4.3 0 0 0-8.6 0v5Z"/>
+                    <path d="M9.5 18.2a2.6 2.6 0 0 0 5 0"/>
+                  </svg>
+                </span>
+                <span class="quick-action-text">
+                  <strong>Atur Pengingat</strong>
+                  <span>Kelola notifikasi</span>
+                </span>
+                <svg class="quick-action-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================== CHECKUP PAGE =================== -->
+        <section class="page" id="page-checkup">
+                    <div class="section-header">
+            <div>
+              <div class="section-title">🔎 Cek Kondisi</div>
+              <div class="section-subtitle">Jawab singkat, pilih yang terasa, lalu dapatkan saran yang lebih terarah.</div>
+            </div>
+          </div>
+          <div class="checkup-hero-intro">
+            <div class="checkup-hero-copy">
+              <span class="checkup-eyebrow">PERSONAL HEALTH GUIDE</span>
+              <h2>Mulai dari yang paling kamu rasakan.</h2>
+              <p>Kamu tidak harus tahu nama kondisinya. Ceritakan dengan kata-katamu sendiri atau pilih beberapa pilihan yang paling mendekati.</p>
+            </div>
+            <div class="checkup-hero-orb" aria-hidden="true">✦</div>
+          </div>
+          <div class="checkup-flow-progress" aria-label="Tahapan cek kondisi">
+            <div class="checkup-flow-step active"><span>01</span><strong>Pilih</strong><small>Kondisi utama</small></div>
+            <div class="checkup-flow-line"></div>
+            <div class="checkup-flow-step"><span>02</span><strong>Perjelas</strong><small>Pilih gejala</small></div>
+            <div class="checkup-flow-line"></div>
+            <div class="checkup-flow-step"><span>03</span><strong>Ceritakan</strong><small>Tambah detail</small></div>
+          </div>
+          <div class="card mb-24 checkup-form-card">
+            <div class="checkup-section-heading"><span class="checkup-step-badge">01</span><div><strong>Pilih kondisi utama</strong><small>Yang paling mendekati keluhanmu</small></div></div>
+            <div id="checkup-condition-selector" class="condition-selector" style="margin-bottom:0;"></div>
+
+            <div id="checkup-symptom-step" class="checkup-symptom-step" style="display:none;">
+              <div class="checkup-section-heading"><span class="checkup-step-badge">02</span><div><strong>Perjelas yang kamu rasakan</strong><small>Boleh pilih lebih dari satu</small></div></div>
+              <div id="checkup-symptom-label" class="checkup-symptom-label">Pilih satu atau beberapa agar saran lebih pas.</div>
+              <div id="checkup-symptom-chips" class="symptom-chip-list"></div>
+              <div id="checkup-symptom-hint" class="checkup-symptom-hint"></div>
+            </div>
+
+            <div class="checkup-story-divider"><span>Opsional, tapi membantu</span></div>
+            <div class="checkup-story-section">
+              <div class="checkup-section-heading"><span class="checkup-step-badge secondary">03</span><div><strong>Ceritakan sedikit lebih detail</strong><small>Tulis dengan kata-katamu sendiri</small></div></div>
+              <label class="form-label" for="checkup-input">Ada hal lain yang ingin kamu ceritakan?</label>
+              <textarea class="form-textarea" id="checkup-input" placeholder="Contoh: sudah terasa sejak semalam, badan agak lemas, dan sulit tidur..."></textarea>
+              <div class="form-hint">Boleh dikosongkan. Pilihan kondisi dan gejala di atas sudah cukup untuk mendapatkan saran umum.</div>
+              <button class="btn btn-primary checkup-submit-button" id="checkup-submit" onclick="Checkup.analyze()">🔎 Dapatkan Rekomendasi</button>
+            </div>
+
+            <div class="checkup-safety-note">Catatan: hasil ini adalah panduan umum, bukan diagnosis. Jika gejala berat atau makin memburuk, hubungi tenaga kesehatan.</div>
+          </div>
+
+          <div id="checkup-results" style="display:none;">
+            <div class="welcome-banner" id="checkup-result-banner" style="margin-bottom:24px;">
+              <div class="welcome-text">
+                <h2 id="checkup-result-title" style="font-size:18px;">—</h2>
+                <p id="checkup-result-desc">—</p>
+              </div>
+              <div class="welcome-emoji" id="checkup-result-icon">🔎</div>
+            </div>
+
+            <div class="checkup-result-note" id="checkup-result-note"></div>
+            <div class="checkup-focus-row"><span class="checkup-step-badge">03</span><div><strong>Saran yang diprioritaskan untukmu</strong><small>Mulai dari pilihan yang paling relevan</small></div></div>
+            <div class="section-title" style="font-size:16px;margin-bottom:12px;">🥗 Pilihan Makan & Minum</div>
+            <div class="checkup-result-helper">Kami tampilkan pilihan yang paling nyambung dulu. Buka pilihan lainnya kalau kamu ingin melihat bahan tambahan.</div>
+            <div id="checkup-food-grid" class="grid-auto mb-12"></div>
+            <button id="checkup-food-more-toggle" class="btn btn-secondary checkup-more-toggle" onclick="Checkup.toggleMore('food')" style="display:none;">＋ Lihat pilihan lainnya</button>
+            <div id="checkup-food-more" class="grid-auto mb-24 checkup-more-list" style="display:none;"></div>
+
+            <div class="checkup-medicine-heading">
+              <div class="section-title" style="font-size:16px;margin-bottom:5px;">💊 Informasi obat bebas</div>
+              <span>Gunakan hanya sesuai label</span>
+            </div>
+            <div class="checkup-result-helper">Pilihan di bawah hanya informasi umum untuk gejala ringan. Jangan mengganti konsultasi dokter atau apoteker, dan jangan menggabungkan obat dengan bahan aktif yang sama.</div>
+            <div id="checkup-medicine-grid" class="grid-auto mb-12"></div>
+            <button id="checkup-medicine-more-toggle" class="btn btn-secondary checkup-more-toggle" onclick="Checkup.toggleMore('medicine')" style="display:none;">＋ Lihat obat lainnya</button>
+            <div id="checkup-medicine-more" class="grid-auto mb-24 checkup-more-list" style="display:none;"></div>
+
+            <div class="section-title" style="font-size:16px;margin-bottom:12px;">🏃 Aktivitas yang sesuai</div>
+            <div id="checkup-activity-grid" class="grid-auto"></div>
+            <button id="checkup-activity-more-toggle" class="btn btn-secondary checkup-more-toggle" onclick="Checkup.toggleMore('activity')" style="display:none;">＋ Lihat aktivitas lainnya</button>
+            <div id="checkup-activity-more" class="grid-auto checkup-more-list" style="display:none;"></div>
+          </div>
+
+          <div id="checkup-empty" class="empty-state">
+            <h3>Belum ada hasil</h3>
+            <p>Ketik keluhan atau pilih kondisi dan gejala, lalu tekan "Lihat Rekomendasi"</p>
+          </div>
+        </section>
+
+        <!-- =================== HEALTH MONITOR PAGE =================== -->
+        <section class="page" id="page-health">
+          <div class="section-header">
+            <div>
+              <div class="section-title">🩺 Monitoring Kesehatan</div>
+              <div class="section-subtitle">Catat kondisi harianmu untuk memantau perkembangan pemulihan</div>
+            </div>
+            <button class="btn btn-primary" onclick="HealthMonitor.showLogForm()">+ Catat Sekarang</button>
+          </div>
+
+          <div class="grid-2 gap-20 mb-24">
+            <!-- Quick Log Form -->
+            <div class="card">
+              <div class="section-title" style="font-size:16px;margin-bottom:20px;">📝 Catat Kondisi Hari Ini</div>
+              <div id="health-log-form">
+                <div class="form-group">
+                  <label class="form-label">Tanggal & Waktu</label>
+                  <input type="datetime-local" class="form-input" id="log-datetime">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Tingkat Nyeri (1–10)</label>
+                  <div class="pain-scale">
+                    <div class="pain-emoji" id="pain-emoji-display">😊</div>
+                    <div class="pain-value-display" id="pain-value-display" style="color:var(--success)">0</div>
+                    <input type="range" class="pain-slider" id="pain-slider" min="0" max="10" value="0"
+                      oninput="HealthMonitor.updatePainDisplay(this.value)">
+                    <div class="pain-labels">
+                      <span>Tidak Sakit</span>
+                      <span>Sangat Sakit</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Suhu Tubuh (°C)</label>
+                  <input type="number" class="form-input" id="log-temp" placeholder="Contoh: 37.2" min="35" max="42"
+                    step="0.1">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Kondisi Kesehatan</label>
+                  <select class="form-select" id="log-condition">
+                    <option value="cedera_fisik">🦴 Cedera Fisik</option>
+                    <option value="demam">🌡️ Demam</option>
+                    <option value="flu_pilek">🤧 Flu / Pilek</option>
+                    <option value="peradangan">🔥 Peradangan</option>
+                    <option value="pemulihan_umum" selected>💪 Pemulihan Umum</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Catatan Gejala</label>
+                  <textarea class="form-textarea" id="log-notes"
+                    placeholder="Deskripsikan gejala, mobilitas, atau perubahan kondisi yang kamu rasakan..."></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Mobilitas</label>
+                  <select class="form-select" id="log-mobility">
+                    <option value="normal">✅ Normal — Bergerak bebas</option>
+                    <option value="terbatas">⚠️ Terbatas — Sedikit kesulitan</option>
+                    <option value="sangat_terbatas">🚫 Sangat Terbatas — Perlu bantuan</option>
+                    <option value="bed_rest">🛏️ Bed Rest</option>
+                  </select>
+                </div>
+
+                <button class="btn btn-primary" style="width:100%;" onclick="HealthMonitor.saveLog()">💾 Simpan
+                  Catatan</button>
+              </div>
+            </div>
+
+            <!-- Trend Chart -->
+            <div class="flex-col gap-20">
+              <div class="card">
+                <div class="section-title" style="font-size:16px;margin-bottom:16px;">📈 Tren Nyeri (14 Hari)</div>
+                <canvas id="trendChart" height="140"></canvas>
+              </div>
+              <div class="card">
+                <div class="section-title" style="font-size:16px;margin-bottom:8px;">🔢 Ringkasan Statistik</div>
+                <div class="grid-2" style="gap:12px;margin-top:12px;" id="health-stats-grid">
+                  <div
+                    style="text-align:center;padding:16px;background:var(--bg-glass);border-radius:var(--radius-md);border:1px solid var(--border);">
+                    <div style="font-size:24px;font-weight:800;color:var(--primary)" id="stat-avg-pain">—</div>
+                    <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600">
+                      Rata-rata Nyeri</div>
+                  </div>
+                  <div
+                    style="text-align:center;padding:16px;background:var(--bg-glass);border-radius:var(--radius-md);border:1px solid var(--border);">
+                    <div style="font-size:24px;font-weight:800;color:var(--accent)" id="stat-avg-temp">—</div>
+                    <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600">
+                      Rata-rata Suhu</div>
+                  </div>
+                  <div
+                    style="text-align:center;padding:16px;background:var(--bg-glass);border-radius:var(--radius-md);border:1px solid var(--border);">
+                    <div style="font-size:24px;font-weight:800;color:var(--secondary)" id="stat-total-logs">0</div>
+                    <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600">Total
+                      Catatan</div>
+                  </div>
+                  <div
+                    style="text-align:center;padding:16px;background:var(--bg-glass);border-radius:var(--radius-md);border:1px solid var(--border);">
+                    <div style="font-size:24px;font-weight:800;color:var(--success)" id="stat-best-day">—</div>
+                    <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600">Hari
+                      Terbaik</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="health-ai-insight mb-24"><div class="insight-icon">✦</div><div><div class="recovery-card-kicker">INSIGHT MINGGU INI · RECOVRA AI</div><p id="health-ai-insight-text">Tambahkan catatan untuk melihat pola kesehatanmu.</p></div></div>
+
+          <!-- Log History -->
+          <div class="card">
+            <div class="flex-between mb-16">
+              <div>
+                <div class="section-title" style="font-size:16px;">📋 Riwayat Catatan</div>
+                <div class="section-subtitle">Semua catatan kesehatan kamu</div>
+              </div>
+              <button class="btn btn-sm btn-danger" onclick="HealthMonitor.clearAllLogs()" id="clear-logs-btn">🗑️ Hapus
+                Semua</button>
+            </div>
+            <div id="health-log-list" class="scroll-list">
+              <div class="empty-state">
+                <div class="emoji">📋</div>
+                <h3>Belum ada catatan</h3>
+                <p>Catat kondisi pertamamu menggunakan form di atas</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================== HEALTH HUB PAGE =================== -->
+        <section class="page" id="page-healthhub">
+          <div class="section-header">
+            <div>
+              <div class="section-title">🩺 Health Hub</div>
+              <div class="section-subtitle">Alat kesehatan sederhana, panduan pemulihan, dan akses layanan kesehatan</div>
+            </div>
+          </div>
+
+          <div class="healthhub-hero">
+            <div>
+              <div class="recovery-card-kicker">RECOVRA HEALTH HUB</div>
+              <h2>Semua kebutuhan kesehatan dalam satu tempat.</h2>
+              <p>Gunakan sebagai alat bantu informasi dan pencatatan. Recovra tidak mendiagnosis penyakit atau menggantikan dokter, tenaga kesehatan, maupun fisioterapis.</p>
+            </div>
+            <div class="healthhub-hero-icon">✚</div>
+          </div>
+
+          <div class="grid-3 healthhub-tools">
+            <div class="card healthhub-tool-card">
+              <div class="healthhub-tool-icon">⚖️</div>
+              <div class="recovery-card-kicker">BODY INDICATOR</div>
+              <h3>BMI Calculator</h3>
+              <p>Hitung BMI dari tinggi dan berat badan. Untuk usia di bawah 20 tahun, hasil angka BMI perlu ditafsirkan berdasarkan usia dan jenis kelamin oleh tenaga kesehatan.</p>
+              <div class="healthhub-form-row">
+                <label>Usia <input id="hub-bmi-age" type="number" min="2" max="120" placeholder="tahun"></label>
+                <label>Jenis kelamin
+                  <select id="hub-bmi-sex"><option value="male">Laki-laki</option><option value="female">Perempuan</option></select>
+                </label>
+              </div>
+              <div class="healthhub-form-row">
+                <label>Tinggi (cm) <input id="hub-bmi-height" type="number" min="50" max="250" placeholder="170"></label>
+                <label>Berat (kg) <input id="hub-bmi-weight" type="number" min="10" max="300" step="0.1" placeholder="60"></label>
+              </div>
+              <button class="btn btn-primary" type="button" onclick="HealthHub.calculateBMI()">Hitung BMI</button>
+              <div id="hub-bmi-result" class="healthhub-result">Masukkan data untuk melihat hasil.</div>
+            </div>
+
+            <div class="card healthhub-tool-card">
+              <div class="healthhub-tool-icon">🍽️</div>
+              <div class="recovery-card-kicker">ENERGY GUIDE</div>
+              <h3>Calorie / Energy Guide</h3>
+              <p>Perkiraan energi hanya ditampilkan untuk pengguna dewasa. Recovra tidak membuat target penurunan berat badan atau defisit kalori untuk remaja.</p>
+              <div class="healthhub-form-row">
+                <label>Usia <input id="hub-cal-age" type="number" min="13" max="120" placeholder="20"></label>
+                <label>Jenis kelamin
+                  <select id="hub-cal-sex"><option value="male">Laki-laki</option><option value="female">Perempuan</option></select>
+                </label>
+              </div>
+              <div class="healthhub-form-row">
+                <label>Berat (kg) <input id="hub-cal-weight" type="number" min="20" max="300" step="0.1" placeholder="60"></label>
+                <label>Tinggi (cm) <input id="hub-cal-height" type="number" min="100" max="250" placeholder="170"></label>
+              </div>
+              <label class="healthhub-full-field">Aktivitas
+                <select id="hub-cal-activity">
+                  <option value="1.2">Ringan / banyak duduk</option>
+                  <option value="1.375">Ringan aktif</option>
+                  <option value="1.55">Cukup aktif</option>
+                  <option value="1.725">Sangat aktif</option>
+                </select>
+              </label>
+              <button class="btn btn-primary" type="button" onclick="HealthHub.calculateEnergy()">Hitung perkiraan</button>
+              <div id="hub-cal-result" class="healthhub-result">Untuk usia &lt;20 tahun, gunakan panduan dari tenaga kesehatan.</div>
+            </div>
+
+            <div class="card healthhub-tool-card">
+              <div class="healthhub-tool-icon">🌙</div>
+              <div class="recovery-card-kicker">RECOVERY CHECK</div>
+              <h3>Sleep & Hydration</h3>
+              <p>Pengganti Heart Rate: catat dua kebiasaan yang mudah dipantau tanpa sensor tambahan.</p>
+              <div class="healthhub-form-row">
+                <label>Tidur (jam) <input id="hub-sleep-hours" type="number" min="0" max="24" step="0.5" placeholder="8"></label>
+                <label>Kualitas
+                  <select id="hub-sleep-quality"><option value="3">Baik</option><option value="2">Cukup</option><option value="1">Kurang</option></select>
+                </label>
+              </div>
+              <label class="healthhub-full-field">Gelas air hari ini <input id="hub-water" type="number" min="0" max="30" placeholder="6"></label>
+              <button class="btn btn-primary" type="button" onclick="HealthHub.saveRecoveryCheck()">Simpan check-in</button>
+              <div id="hub-recovery-result" class="healthhub-result">Belum ada check-in hari ini.</div>
+            </div>
+          </div>
+
+          <div class="grid-2 healthhub-lower-grid">
+            <div class="card healthhub-panel">
+              <div class="section-title" style="font-size:16px;margin-bottom:6px;">🥗 Diet Assistant</div>
+              <div class="section-subtitle">Pilih kondisi yang tersedia di database nutrisi Recovra.</div>
+              <div class="healthhub-form-row healthhub-diet-row">
+                <label>Kondisi
+                  <select id="hub-diet-condition"></select>
+                </label>
+                <button class="btn btn-secondary" type="button" onclick="HealthHub.loadDietAssistant()">Lihat panduan</button>
+              </div>
+              <div id="hub-diet-result" class="healthhub-mini-grid"></div>
+              <div class="healthhub-safety-note">ℹ️ Panduan makanan bersifat umum. Kebutuhan diet pada penyakit tertentu bisa berbeda dan sebaiknya dibahas dengan dokter atau ahli gizi.</div>
+            </div>
+
+            <div class="card healthhub-panel">
+              <div class="section-title" style="font-size:16px;margin-bottom:6px;">🧑‍⚕️ Recommended Therapy</div>
+              <div class="section-subtitle">Pilihan dukungan pemulihan yang dapat dipertimbangkan sesuai kebutuhan.</div>
+              <div class="healthhub-therapy-grid">
+                <button type="button" onclick="App.navigate('activity')"><span>🏃</span><b>Aktivitas bertahap</b><small>Sesuaikan intensitas dengan kondisi.</small></button>
+                <button type="button" onclick="HealthHub.showCareNote('Fisioterapis')"><span>🦵</span><b>Fisioterapi</b><small>Untuk evaluasi dan latihan yang dipandu profesional.</small></button>
+                <button type="button" onclick="HealthHub.showCareNote('Dokter')"><span>🩺</span><b>Konsultasi dokter</b><small>Untuk keluhan yang menetap, memburuk, atau perlu evaluasi.</small></button>
+                <button type="button" onclick="App.navigate('calendar')"><span>📅</span><b>Recovery routine</b><small>Atur istirahat, aktivitas, dan check-in.</small></button>
+              </div>
+              <div id="hub-care-note" class="healthhub-result">Pilih salah satu opsi di atas.</div>
+            </div>
+          </div>
+
+          <div class="card healthhub-panel" style="margin-top:18px;">
+            <div class="flex-between healthhub-facility-header">
+              <div>
+                <div class="section-title" style="font-size:16px;margin-bottom:6px;">📍 Health Center & Professional Care</div>
+                <div class="section-subtitle">Cari fasilitas di area yang kamu masukkan. Recovra tidak menyimpan lokasi otomatis.</div>
+              </div>
+            </div>
+            <div class="healthhub-search-row">
+              <input id="hub-location" type="text" placeholder="Contoh: Yogyakarta, Magelang, Jakarta">
+              <button class="btn btn-secondary" type="button" onclick="HealthHub.findFacility('health center')">🏥 Health Center</button>
+              <button class="btn btn-secondary" type="button" onclick="HealthHub.findFacility('hospital')">🛏️ Hospital</button>
+              <button class="btn btn-secondary" type="button" onclick="HealthHub.findFacility('physiotherapist')">🦵 Physiotherapist</button>
+            </div>
+            <div class="healthhub-safety-note">Untuk keadaan darurat atau gejala berat, gunakan layanan darurat setempat dan beri tahu orang dewasa tepercaya.</div>
+          </div>
+        </section>
+
+        <!-- =================== NUTRITION PAGE =================== -->
+        <section class="page" id="page-nutrition">
+          <div class="section-header">
+            <div>
+              <div class="section-title">🥗 Rekomendasi Nutrisi</div>
+              <div class="section-subtitle">Makanan terbaik berdasarkan kondisi kesehatanmu saat ini</div>
+            </div>
+          </div>
+
+          <!-- Condition Selector -->
+          <div id="nutrition-condition-selector" class="condition-selector"></div>
+
+          <!-- Info Banner -->
+          <div id="nutrition-info-banner" class="welcome-banner" style="margin-bottom:24px;">
+            <div class="welcome-text">
+              <h2 id="nutrition-condition-title" style="font-size:18px;">Pilih Kondisi Kesehatanmu</h2>
+              <p id="nutrition-condition-desc">Pilih kondisi kesehatanmu di atas untuk melihat rekomendasi makanan yang
+                tepat.</p>
+            </div>
+            <div class="welcome-emoji" id="nutrition-condition-icon">🥗</div>
+          </div>
+          <div class="module-ai-insight"><span>✦</span><div><strong>Recovra AI Insight</strong><p id="nutrition-ai-insight">Pilih kondisimu untuk mendapatkan saran yang lebih relevan untukmu.</p></div></div>
+
+          <!-- Food Grid -->
+          <div id="food-grid" class="grid-auto"></div>
+        </section>
+
+        <!-- =================== MEDICINE PAGE =================== -->
+        <section class="page" id="page-medicine">
+          <div class="section-header">
+            <div><div class="section-title">💊 Medicine</div><div class="section-subtitle">Informasi obat bebas berdasarkan kondisi pemulihanmu</div></div>
+          </div>
+          <div class="medicine-page-hero"><div><div class="recovery-card-kicker">RECOVRA MEDICINE GUIDE</div><h2>Pahami sebelum menggunakan.</h2><p>Gunakan halaman ini untuk membaca fungsi dan peringatan umum obat bebas. Ini bukan resep atau diagnosis.</p></div><span>💊</span></div>
+          <div class="medicine-filter-row"><label class="medicine-search-wrap"><span>⌕</span><input id="medicine-search" type="search" placeholder="Cari nama obat atau keluhan..." oninput="Medicine.search(this.value)"></label><div id="medicine-condition-selector" class="medicine-condition-selector"></div></div>
+          <div class="medicine-safety-note">⚠️ Selalu baca label kemasan. Jangan menggandakan bahan aktif, dan tanyakan apoteker/dokter bila kamu hamil, memiliki penyakit kronis, minum obat rutin, atau ragu.</div>
+          <div id="medicine-grid" class="grid-auto"></div>
+        </section>
+
+        <!-- =================== ACTIVITY PAGE =================== -->
+        <section class="page" id="page-activity">
+          <div class="section-header">
+            <div>
+              <div class="section-title">🏃 Aktivitas & Olahraga</div>
+              <div class="section-subtitle">Rekomendasi olahraga berdasarkan kondisi kesehatanmu saat ini</div>
+            </div>
+          </div>
+
+          <!-- Condition Selector -->
+          <div id="activity-condition-selector" class="condition-selector"></div>
+
+          <!-- Info Banner -->
+          <div id="activity-info-banner" class="welcome-banner" style="margin-bottom:24px;">
+            <div class="welcome-text">
+              <h2 id="activity-condition-title" style="font-size:18px;">Pilih Kondisi Kesehatanmu</h2>
+              <p id="activity-condition-desc">Pilih kondisi kesehatanmu di atas untuk melihat rekomendasi aktivitas
+                yang tepat.</p>
+            </div>
+            <div class="welcome-emoji" id="activity-condition-icon">🏃</div>
+          </div>
+          <div class="module-ai-insight"><span>✦</span><div><strong>Recovra AI Insight</strong><p id="activity-ai-insight">Pilih kondisi untuk melihat aktivitas yang ringan dan sesuai konteksmu.</p></div></div>
+
+          <!-- Activity Grid -->
+          <div id="activity-grid" class="grid-auto"></div>
+        </section>
+
+        <!-- =================== CALENDAR PAGE =================== -->
+        <section class="page" id="page-calendar">
+          <div class="section-header">
+            <div>
+              <div class="section-title">📅 Kalender & Jadwal</div>
+              <div class="section-subtitle">Atur rutinitas dan jadwal aktivitas harianmu</div>
+            </div>
+            <button class="btn btn-primary" onclick="CalendarModule.showAddEventModal()">+ Tambah Jadwal</button>
+          </div>
+
+          <div class="grid-2 gap-20" style="grid-template-columns: 1fr 380px;">
+            <!-- Calendar -->
+            <div class="card" style="padding:24px;">
+              <div class="calendar-header">
+                <button class="calendar-nav-btn" onclick="CalendarModule.prevMonth()">‹</button>
+                <div class="calendar-month-title" id="calendar-month-title">—</div>
+                <button class="calendar-nav-btn" onclick="CalendarModule.nextMonth()">›</button>
+              </div>
+              <div class="calendar-grid" id="calendar-day-headers"></div>
+              <div class="calendar-grid" id="calendar-grid" style="margin-top:4px;"></div>
+            </div>
+
+            <!-- Side Panel -->
+            <div class="flex-col gap-20">
+              <!-- Selected Date Events -->
+              <div class="card">
+                <div class="section-title" style="font-size:16px;margin-bottom:16px;" id="selected-date-title">Jadwal
+                  Hari Ini</div>
+                <div id="selected-date-events">
+                  <div class="empty-state" style="padding:24px;">
+                    <div class="emoji">📋</div>
+                    <h3>Tidak ada jadwal</h3>
+                    <p>Klik tanggal di kalender atau tambah jadwal baru</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recurring Events -->
+              <div class="card">
+                <div class="section-title" style="font-size:16px;margin-bottom:16px;">🔁 Jadwal Rutin</div>
+                <div id="recurring-events-list">
+                  <div style="text-align:center;color:var(--text-muted);font-size:13px;padding:12px;">Belum ada jadwal
+                    rutin</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- All Events Table -->
+          <div class="card" style="margin-top:20px;">
+            <div class="flex-between mb-16">
+              <div>
+                <div class="section-title" style="font-size:16px;">📋 Semua Jadwal</div>
+                <div class="section-subtitle">Semua jadwal yang terdaftar</div>
+              </div>
+            </div>
+            <div id="all-events-list"></div>
+          </div>
+        </section>
+
+        <!-- =================== NOTIFICATIONS PAGE =================== -->
+        <section class="page" id="page-notifications">
+          <div class="section-header">
+            <div>
+              <div class="section-title">🔔 Pengingat & Notifikasi</div>
+              <div class="section-subtitle">Atur jadwal pengingat untuk obat, makan, dan olahraga</div>
+            </div>
+          </div>
+
+          <!-- Permission Banner -->
+          <div class="permission-banner" id="permission-banner" style="display:none;">
+            <div style="font-size:28px;">🔔</div>
+            <div class="permission-banner-text">
+              <strong>Aktifkan Notifikasi Browser</strong>
+              <p>Izinkan notifikasi agar pengingat otomatis dapat bekerja di browser kamu.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="NotifModule.requestPermission()">Aktifkan</button>
+          </div>
+
+          <div class="grid-2 gap-20">
+            <!-- Add Reminder -->
+            <div class="card">
+              <div class="section-title" style="font-size:16px;margin-bottom:20px;">➕ Tambah Pengingat</div>
+              <div class="form-group">
+                <label class="form-label">Jenis Pengingat</label>
+                <select class="form-select" id="notif-type">
+                  <option value="obat">💊 Minum Obat</option>
+                  <option value="makan">🍽️ Waktu Makan</option>
+                  <option value="olahraga">🏃 Olahraga / Rehabilitasi</option>
+                  <option value="dokter">👨‍⚕️ Kontrol Dokter</option>
+                  <option value="istirahat">😴 Waktu Istirahat</option>
+                  <option value="fisioterapi">🏥 Fisioterapi</option>
+                  <option value="lainnya">📌 Lainnya</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Label Pengingat</label>
+                <input type="text" class="form-input" id="notif-label" placeholder="Contoh: Minum Amoxicillin">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Waktu Pengingat</label>
+                <input type="time" class="form-input" id="notif-time">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Catatan Tambahan</label>
+                <input type="text" class="form-input" id="notif-note" placeholder="Contoh: 3x sehari sesudah makan">
+              </div>
+              <button class="btn btn-primary" style="width:100%;" onclick="NotifModule.addReminder()">+ Tambah
+                Pengingat</button>
+            </div>
+
+            <!-- Active Reminders -->
+            <div class="card">
+              <div class="section-title" style="font-size:16px;margin-bottom:16px;">⏰ Pengingat Aktif</div>
+              <div id="active-reminders">
+                <div class="empty-state" style="padding:24px;">
+                  <div class="emoji">🔔</div>
+                  <h3>Belum ada pengingat</h3>
+                  <p>Tambah pengingat menggunakan form di sebelah kiri</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notification History -->
+          <div class="card" style="margin-top:20px;">
+            <div class="flex-between mb-16">
+              <div>
+                <div class="section-title" style="font-size:16px;">📜 Riwayat Notifikasi</div>
+                <div class="section-subtitle">Notifikasi yang telah masuk</div>
+              </div>
+              <button class="btn btn-sm btn-danger" onclick="NotifModule.clearHistory()">Hapus Riwayat</button>
+            </div>
+            <div id="notification-history" class="notification-history"></div>
+          </div>
+        </section>
+
+        <!-- =================== CHAT AI PAGE =================== -->
+        <section class="page" id="page-chatai">
+          <div class="chatai-layout" id="chatai-layout">
+            <div class="chatai-sidebar-backdrop" id="chatai-sidebar-backdrop" onclick="ChatModule.closeSidebar()" aria-hidden="true"></div>
+            <aside class="chatai-sidebar" id="chatai-sidebar">
+              <div class="chatai-sidebar-top">
+                <div class="chatai-sidebar-title">
+                  <div class="chatai-brand-mark">✦</div>
+                  <div>
+                    <strong>Recovra AI</strong>
+                    <small>Recovery companion</small>
+                  </div>
+                  <button type="button" class="chatai-sidebar-close" title="Tutup sidebar" aria-label="Tutup sidebar" onclick="ChatModule.closeSidebar()">×</button>
+                </div>
+
+                <button type="button" class="chatai-new-btn" onclick="ChatModule.newChat()">
+                  <span aria-hidden="true">＋</span>
+                  <span>Percakapan baru</span>
+                  <kbd>Ctrl K</kbd>
+                </button>
+              </div>
+
+              <div class="chatai-sidebar-section">
+                <div class="chatai-sidebar-heading">
+                  <span>Chat</span>
+                  <button type="button" class="chatai-icon-btn" title="Hapus semua riwayat" aria-label="Hapus semua riwayat" onclick="ChatModule.clearAllConversations()">⌫</button>
+                </div>
+                <label class="chatai-search">
+                  <span aria-hidden="true">⌕</span>
+                  <input id="chat-search" type="search" placeholder="Cari percakapan..." autocomplete="off">
+                </label>
+                <div class="chatai-sidebar-nav" aria-label="Filter percakapan">
+                  <button type="button" id="chat-nav-pinned" class="chatai-sidebar-nav-btn" onclick="ChatModule.setChatListMode('pinned')"><span>⌖</span> Pinned</button>
+                  <button type="button" id="chat-nav-recent" class="chatai-sidebar-nav-btn active" onclick="ChatModule.setChatListMode('recent')"><span>◷</span> Recent chats</button>
+                </div>
+                <button type="button" class="chatai-archive-toggle" onclick="ChatModule.showArchivedChats()">
+                  <span>▱</span> <span id="chat-archive-toggle-label">Buka Archive</span>
+                </button>
+              </div>
+
+              <div id="chat-conversation-list" class="chatai-conversation-list"></div>
+
+              <div class="chatai-sidebar-footer">
+                <button type="button" class="chatai-danger-link" onclick="ChatModule.clearAllConversations()">
+                  <span>🗑</span> Hapus semua riwayat
+                </button>
+              </div>
+            </aside>
+
+            <div class="chatai-main">
+              <header class="chatai-main-header">
+                <div class="chatai-header-left">
+                  <button type="button" class="chatai-sidebar-toggle" id="chatai-sidebar-toggle" title="Buka sidebar" aria-label="Buka sidebar" aria-expanded="false" onclick="ChatModule.toggleSidebar()">☰</button>
+                  <div class="chatai-header-agent">
+                  <div class="chatai-avatar" aria-hidden="true">✦</div>
+                  <div>
+                    <strong>Recovra AI</strong>
+                    <span><i></i> Siap membantu</span>
+                  </div>
+                  </div>
+                </div>
+                <div class="chatai-header-actions">
+                  <button type="button" class="chatai-header-btn" title="Percakapan baru" aria-label="Percakapan baru" onclick="ChatModule.newChat()">＋</button>
+                </div>
+              </header>
+
+              <!-- Home state: tampil saat belum ada pesan user -->
+              <div id="chat-home" class="chatai-home">
+                <div class="chatai-home-inner">
+                  <div class="chatai-home-logo">✦</div>
+                  <div class="chatai-home-kicker">RECOVRA AI</div>
+                  <h1>Apa yang ingin kamu bahas?</h1>
+                  <p>Ceritakan kondisi kamu, tanyakan sesuatu, atau mulai dari salah satu pilihan di bawah.</p>
+
+                  <div id="chat-home-prompts" class="chatai-home-prompts">
+                    <button type="button" onclick="ChatModule.usePrompt('Aku mau check-in kondisi hari ini')">
+                      <span class="prompt-icon">◌</span><span><b>Check-in kondisi</b><small>Ceritakan apa yang kamu rasakan</small></span>
+                    </button>
+                    <button type="button" onclick="ChatModule.usePrompt('Makanan apa yang cocok untuk kondisiku?')">
+                      <span class="prompt-icon">⌁</span><span><b>Tanya nutrisi</b><small>Cari ide makanan yang sesuai</small></span>
+                    </button>
+                    <button type="button" onclick="ChatModule.usePrompt('Aktivitas ringan apa yang aman untukku?')">
+                      <span class="prompt-icon">↗</span><span><b>Tanya aktivitas</b><small>Atur ritme pemulihanmu</small></span>
+                    </button>
+                    <button type="button" onclick="ChatModule.usePrompt('Aku mau cerita soal kondisi yang sedang aku rasakan')">
+                      <span class="prompt-icon">♡</span><span><b>Mulai percakapan</b><small>Ngobrol bebas dengan Recovra AI</small></span>
+                    </button>
+                  </div>
+
+                  <div class="chatai-home-note"><span>✦</span> Recovra AI memberi informasi umum, bukan diagnosis atau pengganti tenaga medis.</div>
+                </div>
+              </div>
+
+              <div id="chat-messages" class="chatai-messages" aria-live="polite"></div>
+              <div id="chat-quick-prompts" class="chatai-quick-prompts" aria-label="Pertanyaan cepat"></div>
+
+              <form id="chat-form" class="chatai-form" onsubmit="ChatModule.sendMessage(event)">
+                <div class="chatai-input-wrap">
+                  <input type="text" id="chat-input" placeholder="Tanya Recovra AI..." autocomplete="off" required>
+                  <span class="chatai-input-hint">Enter untuk mengirim</span>
+                </div>
+                <button type="submit" aria-label="Kirim pesan" title="Kirim">↑</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="data/foods.json" type="application/json" id="foods-data-src"></script>
+  <script src="js/app.js"></script>
+  <script src="js/health.js"></script>
+  <script src="js/healthhub.js"></script>
+  <script src="js/checkup.js"></script>
+  <script src="js/nutrition.js"></script>
+  <script src="js/medicine.js"></script>
+  <script src="js/activity.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/chatbot.js"></script>
+
+
+
+
+</body>
+
+</html>

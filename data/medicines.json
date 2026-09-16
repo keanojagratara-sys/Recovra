@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "title": "Informasi obat bebas",
+    "disclaimer": "Informasi ini bukan resep. Selalu baca label kemasan, jangan menggandakan bahan aktif, dan tanyakan apoteker atau dokter bila ragu."
+  },
+  "conditions": {
+    "cedera_fisik": {
+      "medicines": [
+        {
+          "id": "paracetamol-cedera",
+          "name": "Paracetamol",
+          "emoji": "💊",
+          "category": "Pereda nyeri / demam",
+          "use": "Dapat digunakan untuk nyeri ringan sampai sedang bila sesuai untukmu.",
+          "why": "Pilihan obat bebas yang umum untuk membantu meredakan nyeri, tetapi tidak mengatasi penyebab cedera.",
+          "caution": "Ikuti dosis pada kemasan. Jangan digabung dengan obat flu yang juga mengandung paracetamol. Tanyakan tenaga kesehatan bila punya penyakit hati/ginjal, berat badan di bawah 50 kg, hamil, atau minum alkohol berat.",
+          "tags": ["pereda-nyeri"]
+        },
+        {
+          "id": "gel-nyeri-cedera",
+          "name": "Gel pereda nyeri topikal",
+          "emoji": "🧴",
+          "category": "Oles luar",
+          "use": "Pertimbangkan hanya setelah membaca label dan bertanya kepada apoteker.",
+          "why": "Beberapa gel topikal digunakan untuk keluhan otot atau sendi, tetapi kecocokannya bergantung pada lokasi dan jenis cedera.",
+          "caution": "Jangan oleskan pada luka terbuka, kulit iritasi, atau area luas tanpa arahan tenaga kesehatan. Hentikan bila muncul ruam atau sesak.",
+          "tags": ["pereda-nyeri", "anti-inflamasi"]
+        }
+      ]
+    },
+    "demam": {
+      "medicines": [
+        {
+          "id": "paracetamol-demam",
+          "name": "Paracetamol",
+          "emoji": "💊",
+          "category": "Pereda nyeri / penurun demam",
+          "use": "Dapat membantu menurunkan demam dan meredakan nyeri ringan bila sesuai untukmu.",
+          "why": "Paracetamol umum digunakan untuk gejala demam, tetapi tetap perlu mengikuti aturan pada kemasan.",
+          "caution": "Jangan memakai lebih dari aturan label atau menggandakan dengan obat flu yang mengandung paracetamol. Segera cari bantuan bila demam berat, memburuk, atau disertai sesak, kebingungan, kaku kuduk, atau dehidrasi.",
+          "tags": ["penurun-demam", "pereda-nyeri"]
+        },
+        {
+          "id": "oralit-demam",
+          "name": "Larutan rehidrasi oral (oralit)",
+          "emoji": "🥤",
+          "category": "Rehidrasi",
+          "use": "Bisa dipertimbangkan bila banyak berkeringat, muntah, atau diare; minum sedikit-sedikit sesuai petunjuk.",
+          "why": "Oralit membantu mengganti cairan dan garam yang hilang, terutama ketika risiko dehidrasi meningkat.",
+          "caution": "Campur persis sesuai petunjuk kemasan. Konsultasikan dengan apoteker bila punya kondisi ginjal, jantung, atau pembatasan cairan.",
+          "tags": ["hidrasi", "rehidrasi", "elektrolit"]
+        }
+      ]
+    },
+    "flu_pilek": {
+      "medicines": [
+        {
+          "id": "paracetamol-flu",
+          "name": "Paracetamol",
+          "emoji": "💊",
+          "category": "Pereda nyeri / demam",
+          "use": "Dapat membantu demam, sakit kepala, atau nyeri badan ringan bila sesuai untukmu.",
+          "why": "Membantu meredakan beberapa gejala flu, tetapi bukan obat untuk membasmi semua penyebab flu.",
+          "caution": "Periksa kandungan obat flu kombinasi agar tidak menggandakan paracetamol. Ikuti label dan konsultasikan bila punya penyakit hati/ginjal atau sedang minum obat lain.",
+          "tags": ["penurun-demam", "pereda-nyeri"]
+        },
+        {
+          "id": "saline-flu",
+          "name": "Semprot atau tetes hidung saline",
+          "emoji": "💧",
+          "category": "Perawatan hidung",
+          "use": "Dapat membantu melembapkan hidung dan mengurangi rasa tersumbat ringan.",
+          "why": "Saline tidak mengandung dekongestan obat dan dapat menjadi pilihan perawatan lokal yang sederhana.",
+          "caution": "Gunakan produk sesuai petunjuk. Jangan berbagi botol. Bila hidung tersumbat menetap, nyeri wajah berat, atau sesak, periksa ke tenaga kesehatan.",
+          "tags": ["dekongestan", "hidrasi"]
+        },
+        {
+          "id": "lozenges-flu",
+          "name": "Tablet hisap tenggorokan",
+          "emoji": "🍬",
+          "category": "Pereda tenggorokan",
+          "use": "Bisa membantu rasa tidak nyaman di tenggorokan sesuai petunjuk kemasan.",
+          "why": "Tablet hisap dapat memberi kelembapan atau efek menenangkan sementara pada tenggorokan.",
+          "caution": "Periksa bahan aktif dan batas usia. Jangan diberikan kepada anak kecil yang berisiko tersedak tanpa arahan tenaga kesehatan.",
+          "tags": ["mudah-dimakan", "hidrasi", "anti-inflamasi"]
+        }
+      ]
+    },
+    "peradangan": {
+      "medicines": [
+        {
+          "id": "paracetamol-radang",
+          "name": "Paracetamol",
+          "emoji": "💊",
+          "category": "Pereda nyeri",
+          "use": "Dapat membantu nyeri ringan bila sesuai untukmu, meski bukan obat anti-inflamasi.",
+          "why": "Dapat menjadi opsi bebas untuk mengurangi rasa nyeri sambil memantau kondisi.",
+          "caution": "Ikuti label dan jangan digabung dengan produk lain yang mengandung paracetamol. Untuk sendi bengkak, merah, panas, atau nyeri berulang, konsultasikan ke dokter.",
+          "tags": ["pereda-nyeri"]
+        },
+        {
+          "id": "antiinflamasi-topikal",
+          "name": "Gel anti-inflamasi topikal",
+          "emoji": "🧴",
+          "category": "Oles luar",
+          "use": "Tanyakan apoteker apakah gel anti-inflamasi topikal sesuai dengan keluhanmu.",
+          "why": "Sebagian produk oles digunakan untuk keluhan nyeri sendi atau otot, tetapi tidak cocok untuk semua orang.",
+          "caution": "Jangan gunakan pada luka terbuka atau bila alergi terhadap obat anti-inflamasi. Minta saran apoteker bila hamil, punya asma yang dipicu obat, penyakit lambung/ginjal, atau memakai pengencer darah.",
+          "tags": ["anti-inflamasi", "sendi"]
+        }
+      ]
+    },
+    "pemulihan_umum": {
+      "medicines": [
+        {
+          "id": "oralit-pulih",
+          "name": "Larutan rehidrasi oral (oralit)",
+          "emoji": "🥤",
+          "category": "Rehidrasi",
+          "use": "Pertimbangkan bila kehilangan banyak cairan karena muntah, diare, atau keringat berlebih.",
+          "why": "Membantu mengganti cairan dan elektrolit yang hilang ketika air biasa saja mungkin belum cukup.",
+          "caution": "Ikuti takaran kemasan. Bila sangat lemas, jarang buang air kecil, pusing saat berdiri, atau sulit minum, cari pertolongan medis.",
+          "tags": ["hidrasi", "rehidrasi", "elektrolit"]
+        },
+        {
+          "id": "paracetamol-pulih",
+          "name": "Paracetamol",
+          "emoji": "💊",
+          "category": "Pereda nyeri / demam",
+          "use": "Dapat digunakan untuk nyeri atau demam ringan bila sesuai untukmu.",
+          "why": "Bisa membantu gejala sementara sehingga kamu dapat beristirahat, tetapi tidak menggantikan pemeriksaan bila keluhan menetap.",
+          "caution": "Ikuti aturan pada kemasan dan hindari duplikasi kandungan. Tanyakan apoteker atau dokter bila minum obat rutin atau punya penyakit hati/ginjal.",
+          "tags": ["pereda-nyeri", "penurun-demam"]
+        }
+      ]
+    }
+  }
+}

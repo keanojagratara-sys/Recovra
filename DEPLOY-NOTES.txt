@@ -1,0 +1,16 @@
+RECOVRA — HEALTH HUB UPDATE
+
+Changes:
+- Added Health Hub page.
+- BMI calculator with teen-safe interpretation (no adult category for users under 20).
+- Calorie/Energy Guide: adult estimate only; no calorie target for users under 20.
+- Replaced Heart Rate with Sleep & Hydration check-in (no sensor/device required).
+- Diet Assistant uses the existing nutrition database.
+- General recovery/therapy support cards.
+- Health Center / Hospital / Physiotherapist search using the city/area entered by the user.
+- Added .gitignore and .env.example.
+
+IMPORTANT:
+- Do NOT create/commit a .env file with a real API key.
+- Set AI_API_KEY, AI_MODEL, AI_ENDPOINT and PORT in your hosting provider's environment variables.
+- This app is an informational/recovery tool, not a diagnosis or treatment service.

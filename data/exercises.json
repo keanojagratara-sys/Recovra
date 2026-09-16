@@ -1,0 +1,568 @@
+{
+  "conditions": {
+    "cedera_fisik": {
+      "label": "Cedera Fisik / Pemulihan Tulang",
+      "icon": "🦴",
+      "description": "Gerakan ringan yang aman untuk memulihkan kekuatan tanpa membebani area cedera",
+      "activities": [
+        {
+          "id": "rom_pasif",
+          "name": "Latihan Rentang Gerak (ROM) Pasif",
+          "emoji": "🤲",
+          "category": "Mobilitas",
+          "intensity": "Sangat Ringan",
+          "duration": "10-15 menit",
+          "timing": "Pagi & Sore",
+          "why": "Menggerakkan sendi tanpa beban membantu mencegah kekakuan dan menjaga sirkulasi darah ke area cedera, tanpa memberi tekanan pada jaringan yang masih dalam proses penyembuhan.",
+          "tags": [
+            "mobilitas",
+            "aman-cedera",
+            "sirkulasi"
+          ],
+          "caution": "Hentikan jika muncul nyeri tajam, bukan sekadar rasa kaku."
+        },
+        {
+          "id": "isometrik",
+          "name": "Latihan Isometrik (kontraksi otot tanpa gerak sendi)",
+          "emoji": "💪",
+          "category": "Penguatan Ringan",
+          "duration": "10 menit, 3 set",
+          "intensity": "Ringan",
+          "timing": "Siang",
+          "why": "Mengencangkan otot di sekitar sendi yang cedera tanpa menggerakkan sendi itu sendiri membantu mencegah atrofi otot selama masa imobilisasi.",
+          "tags": [
+            "penguatan",
+            "aman-cedera",
+            "cegah-atrofi"
+          ],
+          "caution": "Lakukan hanya jika sudah diizinkan dokter/fisioterapis."
+        },
+        {
+          "id": "jalan_kaki_ringan",
+          "name": "Jalan Kaki Ringan (jika area tungkai tidak cedera)",
+          "emoji": "🚶",
+          "category": "Kardio Ringan",
+          "duration": "10-15 menit",
+          "intensity": "Ringan",
+          "timing": "Pagi",
+          "why": "Menjaga sirkulasi tubuh secara umum dan mencegah kekakuan pada bagian tubuh yang sehat, tanpa membebani area yang cedera.",
+          "tags": [
+            "kardio-ringan",
+            "sirkulasi"
+          ],
+          "caution": "Gunakan alat bantu (tongkat/kruk) bila disarankan."
+        },
+        {
+          "id": "peregangan_lembut",
+          "name": "Peregangan Lembut Area Sekitar Cedera",
+          "emoji": "🧘",
+          "category": "Fleksibilitas",
+          "duration": "5-10 menit",
+          "intensity": "Sangat Ringan",
+          "timing": "Sore",
+          "why": "Menjaga fleksibilitas otot di sekitar area cedera membantu mengurangi kekakuan kompensasi tanpa menarik jaringan yang sedang pulih.",
+          "tags": [
+            "fleksibilitas",
+            "aman-cedera"
+          ],
+          "caution": "Jangan memaksa gerakan sampai terasa nyeri."
+        },
+        {
+          "id": "relaksasi_otot",
+          "name": "Relaksasi Otot Sambil Berbaring",
+          "emoji": "🛌",
+          "category": "Pemulihan",
+          "duration": "5–10 menit",
+          "intensity": "Sangat Ringan",
+          "timing": "Saat tubuh terasa tegang",
+          "why": "Melemaskan area tubuh yang tidak cedera tanpa memberi beban tambahan pada bagian yang sedang pulih.",
+          "tags": [
+            "relaksasi",
+            "aman-cedera"
+          ],
+          "caution": "Hentikan bila nyeri bertambah atau area cedera terasa berdenyut."
+        },
+        {
+          "id": "latihan_tangan_ringan",
+          "name": "Gerak Jari & Pergelangan",
+          "emoji": "🤲",
+          "category": "Mobilitas Ringan",
+          "duration": "5 menit",
+          "intensity": "Sangat Ringan",
+          "timing": "1–2 kali sehari",
+          "why": "Gerakan kecil dapat membantu menjaga mobilitas pada area yang tidak dibatasi oleh tenaga kesehatan.",
+          "tags": [
+            "mobilitas",
+            "sirkulasi",
+            "aman-cedera"
+          ],
+          "caution": "Jangan lakukan pada area yang dipasang gips atau dilarang bergerak."
+        },
+        {
+          "id": "visualisasi_pulih",
+          "name": "Visualisasi & Pernapasan Tenang",
+          "emoji": "🌬️",
+          "category": "Relaksasi",
+          "duration": "5–8 menit",
+          "intensity": "Sangat Ringan",
+          "timing": "Sebelum tidur",
+          "why": "Membantu menurunkan ketegangan dan menjaga rutinitas pemulihan saat aktivitas fisik sedang terbatas.",
+          "tags": [
+            "relaksasi",
+            "pernapasan"
+          ],
+          "caution": "Ini bukan pengganti latihan atau terapi dari tenaga kesehatan."
+        }
+      ]
+    },
+    "demam": {
+      "label": "Demam / Infeksi",
+      "icon": "🌡️",
+      "description": "Prioritas utama adalah istirahat — aktivitas fisik diminimalkan sampai suhu tubuh normal",
+      "activities": [
+        {
+          "id": "istirahat_total",
+          "name": "Istirahat Total / Tidur",
+          "emoji": "🛌",
+          "category": "Pemulihan",
+          "duration": "7-9 jam + tidur siang",
+          "intensity": "Tidak ada aktivitas fisik",
+          "timing": "Sepanjang hari",
+          "why": "Saat demam, tubuh mengalihkan energi untuk melawan infeksi. Aktivitas fisik justru membebani sistem imun dan bisa memperlambat pemulihan.",
+          "tags": [
+            "istirahat",
+            "wajib"
+          ],
+          "caution": "Hindari olahraga sampai suhu tubuh normal minimal 24 jam."
+        },
+        {
+          "id": "napas_dalam",
+          "name": "Latihan Pernapasan Dalam (sambil berbaring)",
+          "emoji": "🌬️",
+          "category": "Relaksasi",
+          "duration": "5 menit",
+          "intensity": "Sangat Ringan",
+          "timing": "Kapan saja terasa nyaman",
+          "why": "Membantu relaksasi dan menjaga fungsi paru-paru tetap aktif tanpa membebani tubuh, terutama bermanfaat bila demam disertai gejala pernapasan.",
+          "tags": [
+            "relaksasi",
+            "pernapasan"
+          ],
+          "caution": "Hentikan bila terasa pusing atau sesak."
+        },
+        {
+          "id": "kompres_nyaman",
+          "name": "Kompres Suhu Nyaman",
+          "emoji": "🧺",
+          "category": "Kenyamanan",
+          "duration": "10–15 menit",
+          "intensity": "Pasif",
+          "timing": "Saat terasa tidak nyaman",
+          "why": "Membantu memberi rasa nyaman sementara; gunakan air suam-suam kuku dan jangan memaksa tubuh menjadi dingin.",
+          "tags": [
+            "relaksasi",
+            "istirahat"
+          ],
+          "caution": "Hindari air sangat dingin atau alkohol pada kulit."
+        },
+        {
+          "id": "posisi_istirahat",
+          "name": "Atur Posisi Istirahat",
+          "emoji": "🛏️",
+          "category": "Istirahat",
+          "duration": "Sepanjang hari",
+          "intensity": "Pasif",
+          "timing": "Saat tidur atau berbaring",
+          "why": "Posisi yang nyaman membantu tubuh beristirahat dan menghemat energi untuk pemulihan.",
+          "tags": [
+            "istirahat",
+            "wajib"
+          ],
+          "caution": "Cari bantuan bila sulit bernapas, sangat lemas, atau sulit dibangunkan."
+        },
+        {
+          "id": "stretching_tempat_tidur",
+          "name": "Peregangan Kaki di Tempat Tidur",
+          "emoji": "🦵",
+          "category": "Mobilitas Sangat Ringan",
+          "duration": "2–3 menit",
+          "intensity": "Sangat Ringan",
+          "timing": "Jika tidak pusing",
+          "why": "Gerakan sangat ringan dapat membantu mengurangi kaku setelah berbaring lama.",
+          "tags": [
+            "mobilitas",
+            "sirkulasi"
+          ],
+          "caution": "Hentikan bila pusing, menggigil, atau badan terasa makin lemah."
+        },
+        {
+          "id": "relaksasi_demam",
+          "name": "Relaksasi Napas 4–6",
+          "emoji": "🌬️",
+          "category": "Pernapasan",
+          "duration": "3–5 menit",
+          "intensity": "Sangat Ringan",
+          "timing": "Saat cemas atau sulit rileks",
+          "why": "Tarikan dan hembusan pelan membantu menenangkan tubuh tanpa aktivitas berat.",
+          "tags": [
+            "relaksasi",
+            "pernapasan"
+          ],
+          "caution": "Hentikan jika terasa sesak atau pusing."
+        },
+        {
+          "id": "tidur_siang",
+          "name": "Tidur Siang Singkat",
+          "emoji": "😴",
+          "category": "Pemulihan",
+          "duration": "20–40 menit",
+          "intensity": "Pasif",
+          "timing": "Siang hari",
+          "why": "Tidur tambahan dapat membantu menghemat energi ketika tubuh sedang melawan infeksi.",
+          "tags": [
+            "istirahat",
+            "wajib"
+          ],
+          "caution": "Jangan menunda bantuan medis jika kondisi terus memburuk."
+        }
+      ]
+    },
+    "flu_pilek": {
+      "label": "Flu / Pilek",
+      "icon": "🤧",
+      "description": "Aktivitas sangat ringan diperbolehkan jika gejala di atas leher (hidung, tenggorokan) tanpa demam",
+      "activities": [
+        {
+          "id": "jalan_santai",
+          "name": "Jalan Santai di Dalam Rumah/Sekitar Rumah",
+          "emoji": "🚶",
+          "category": "Kardio Ringan",
+          "duration": "10-15 menit",
+          "intensity": "Ringan",
+          "timing": "Siang, saat badan terasa lebih enak",
+          "why": "Gerakan ringan dapat membantu membuka saluran napas dan sedikit meningkatkan mood, selama tidak disertai demam atau nyeri badan.",
+          "tags": [
+            "kardio-ringan",
+            "opsional"
+          ],
+          "caution": "Berhenti jika muncul demam, nyeri dada, atau napas berat — ini tanda tubuh butuh istirahat penuh, bukan olahraga."
+        },
+        {
+          "id": "peregangan_ringan_flu",
+          "name": "Peregangan Leher & Bahu",
+          "emoji": "🧘",
+          "category": "Fleksibilitas",
+          "duration": "5-10 menit",
+          "intensity": "Sangat Ringan",
+          "timing": "Pagi",
+          "why": "Membantu meredakan ketegangan otot leher/bahu yang sering menyertai flu, tanpa membebani sistem pernapasan.",
+          "tags": [
+            "fleksibilitas",
+            "relaksasi"
+          ],
+          "caution": "Hindari gerakan intens yang memicu batuk berlebihan."
+        },
+        {
+          "id": "uap_hangat",
+          "name": "Duduk di Ruangan Beruap Hangat",
+          "emoji": "♨️",
+          "category": "Kenyamanan Napas",
+          "duration": "5–10 menit",
+          "intensity": "Sangat Ringan",
+          "timing": "Saat hidung terasa tersumbat",
+          "why": "Udara hangat dan lembap dapat memberi rasa nyaman sementara pada hidung yang terasa kering atau tersumbat.",
+          "tags": [
+            "pernapasan",
+            "relaksasi"
+          ],
+          "caution": "Hindari air mendidih dan risiko luka bakar."
+        },
+        {
+          "id": "kumur_air_garam",
+          "name": "Kumur Air Garam Hangat",
+          "emoji": "🫗",
+          "category": "Kenyamanan Tenggorokan",
+          "duration": "1–2 menit",
+          "intensity": "Pasif",
+          "timing": "Saat tenggorokan tidak nyaman",
+          "why": "Kumur dapat membantu memberi rasa bersih dan nyaman pada tenggorokan.",
+          "tags": [
+            "relaksasi"
+          ],
+          "caution": "Jangan ditelan dan jangan gunakan pada anak yang belum bisa berkumur."
+        },
+        {
+          "id": "jalan_ringan_flu",
+          "name": "Jalan Ringan di Rumah",
+          "emoji": "🚶",
+          "category": "Kardio Sangat Ringan",
+          "duration": "5–10 menit",
+          "intensity": "Sangat Ringan",
+          "timing": "Jika tanpa demam",
+          "why": "Gerak ringan menjaga tubuh tidak terlalu lama diam ketika gejala hanya ringan dan berada di atas leher.",
+          "tags": [
+            "kardio-ringan",
+            "opsional"
+          ],
+          "caution": "Jangan dilakukan jika demam, nyeri badan, sesak, atau pusing."
+        },
+        {
+          "id": "istirahat_flu",
+          "name": "Istirahat dengan Kepala Sedikit Terangkat",
+          "emoji": "🛌",
+          "category": "Istirahat",
+          "duration": "Saat tidur",
+          "intensity": "Pasif",
+          "timing": "Malam hari",
+          "why": "Posisi ini dapat membuat istirahat terasa lebih nyaman ketika hidung tersumbat.",
+          "tags": [
+            "istirahat",
+            "pernapasan"
+          ],
+          "caution": "Sesuaikan dengan posisi yang paling aman dan nyaman."
+        },
+        {
+          "id": "gerak_bahu_flu",
+          "name": "Gerak Bahu dan Leher Pelan",
+          "emoji": "🧘",
+          "category": "Mobilitas Ringan",
+          "duration": "5 menit",
+          "intensity": "Sangat Ringan",
+          "timing": "Pagi atau sore",
+          "why": "Gerak ringan membantu mengurangi rasa kaku akibat terlalu lama berbaring atau duduk.",
+          "tags": [
+            "fleksibilitas",
+            "relaksasi"
+          ],
+          "caution": "Berhenti jika memicu pusing atau batuk berat."
+        }
+      ]
+    },
+    "peradangan": {
+      "label": "Peradangan / Arthritis",
+      "icon": "🔥",
+      "description": "Gerakan low-impact yang menjaga sendi tetap bergerak tanpa memperparah peradangan",
+      "activities": [
+        {
+          "id": "berenang",
+          "name": "Berenang / Aqua Therapy",
+          "emoji": "🏊",
+          "category": "Kardio Low-Impact",
+          "duration": "20-30 menit",
+          "intensity": "Sedang",
+          "timing": "Siang/Sore",
+          "why": "Air menopang berat badan sehingga mengurangi tekanan pada sendi yang meradang, sambil tetap melatih kekuatan otot dan menjaga rentang gerak.",
+          "tags": [
+            "low-impact",
+            "sendi",
+            "kardio"
+          ],
+          "caution": "Hindari air terlalu dingin yang bisa memicu kekakuan sendi."
+        },
+        {
+          "id": "yoga_lembut",
+          "name": "Yoga Lembut / Stretching Terapeutik",
+          "emoji": "🧘",
+          "category": "Fleksibilitas",
+          "duration": "15-20 menit",
+          "intensity": "Ringan",
+          "timing": "Pagi",
+          "why": "Gerakan yoga yang lembut membantu menjaga fleksibilitas sendi dan mengurangi kekakuan, sekaligus menurunkan hormon stres yang dapat memperparah peradangan.",
+          "tags": [
+            "fleksibilitas",
+            "sendi",
+            "relaksasi"
+          ],
+          "caution": "Hindari pose yang memberi tekanan langsung pada sendi yang meradang."
+        },
+        {
+          "id": "sepeda_statis",
+          "name": "Bersepeda Statis (resistensi rendah)",
+          "emoji": "🚴",
+          "category": "Kardio Low-Impact",
+          "duration": "15-20 menit",
+          "intensity": "Ringan-Sedang",
+          "timing": "Siang",
+          "why": "Gerakan memutar yang halus menjaga sendi lutut dan pinggul tetap aktif bergerak tanpa benturan, membantu melumasi sendi secara alami.",
+          "tags": [
+            "low-impact",
+            "sendi"
+          ],
+          "caution": "Atur resistensi serendah mungkin di awal."
+        },
+        {
+          "id": "jalan_air",
+          "name": "Jalan di Air Dangkal",
+          "emoji": "🏊",
+          "category": "Low Impact",
+          "duration": "10–15 menit",
+          "intensity": "Ringan",
+          "timing": "Siang hari",
+          "why": "Air membantu menopang tubuh sehingga gerak terasa lebih ringan pada sebagian orang.",
+          "tags": [
+            "low-impact",
+            "sendi"
+          ],
+          "caution": "Pastikan ada pegangan dan jangan dilakukan saat nyeri sedang kambuh berat."
+        },
+        {
+          "id": "latihan_keseimbangan",
+          "name": "Latihan Keseimbangan dengan Pegangan",
+          "emoji": "🪑",
+          "category": "Stabilitas",
+          "duration": "5–10 menit",
+          "intensity": "Ringan",
+          "timing": "Pagi",
+          "why": "Latihan sederhana dengan pegangan membantu menjaga kepercayaan diri saat bergerak.",
+          "tags": [
+            "mobilitas",
+            "sendi"
+          ],
+          "caution": "Lakukan dekat dinding atau kursi yang kokoh."
+        },
+        {
+          "id": "kontraksi_sendi",
+          "name": "Kontraksi Otot Ringan",
+          "emoji": "💪",
+          "category": "Penguatan",
+          "duration": "5–8 menit",
+          "intensity": "Ringan",
+          "timing": "Sesuai toleransi",
+          "why": "Kontraksi tanpa gerakan besar menjaga otot tetap aktif ketika rentang gerak sedang terbatas.",
+          "tags": [
+            "penguatan",
+            "sendi"
+          ],
+          "caution": "Jangan menahan napas dan hentikan bila nyeri tajam muncul."
+        },
+        {
+          "id": "jalan_santai_sendi",
+          "name": "Jalan Santai di Permukaan Rata",
+          "emoji": "🚶",
+          "category": "Kardio Low Impact",
+          "duration": "10–20 menit",
+          "intensity": "Ringan",
+          "timing": "Pagi atau sore",
+          "why": "Jalan terukur membantu menjaga mobilitas tanpa benturan tinggi.",
+          "tags": [
+            "low-impact",
+            "kardio"
+          ],
+          "caution": "Kurangi durasi saat sendi terasa lebih bengkak atau panas."
+        }
+      ]
+    },
+    "pemulihan_umum": {
+      "label": "Pemulihan Umum / Pasca Sakit",
+      "icon": "💪",
+      "description": "Aktivitas bertahap untuk membangun kembali stamina setelah sakit",
+      "activities": [
+        {
+          "id": "jalan_bertahap",
+          "name": "Jalan Kaki Bertahap",
+          "emoji": "🚶",
+          "category": "Kardio Ringan",
+          "duration": "Mulai 10 menit, naik bertahap",
+          "intensity": "Ringan",
+          "timing": "Pagi",
+          "why": "Membangun kembali stamina kardiovaskular secara bertahap tanpa membebani tubuh yang baru pulih. Tingkatkan durasi 5 menit setiap beberapa hari sesuai toleransi tubuh.",
+          "tags": [
+            "kardio-ringan",
+            "bertahap"
+          ],
+          "caution": "Berhenti jika muncul pusing, lelah berlebihan, atau jantung berdebar."
+        },
+        {
+          "id": "senam_ringan",
+          "name": "Senam Peregangan Ringan",
+          "emoji": "🤸",
+          "category": "Fleksibilitas",
+          "duration": "10-15 menit",
+          "intensity": "Ringan",
+          "timing": "Pagi/Sore",
+          "why": "Mengembalikan fleksibilitas dan kelenturan otot yang mungkin menurun selama sakit, sekaligus membantu memperbaiki sirkulasi darah.",
+          "tags": [
+            "fleksibilitas",
+            "sirkulasi"
+          ],
+          "caution": "Lakukan dengan gerakan lambat dan terkontrol."
+        },
+        {
+          "id": "napas_diafragma",
+          "name": "Latihan Pernapasan Diafragma",
+          "emoji": "🌬️",
+          "category": "Pernapasan",
+          "duration": "5-10 menit",
+          "intensity": "Sangat Ringan",
+          "timing": "Kapan saja",
+          "why": "Membantu memulihkan kapasitas paru-paru terutama jika sakit sebelumnya melibatkan gangguan pernapasan, dan menurunkan tingkat stres.",
+          "tags": [
+            "pernapasan",
+            "relaksasi"
+          ],
+          "caution": "Hentikan jika terasa pusing."
+        },
+        {
+          "id": "naik_turun_kursi",
+          "name": "Duduk-Berdiri dari Kursi",
+          "emoji": "🪑",
+          "category": "Penguatan Fungsional",
+          "duration": "5–10 menit",
+          "intensity": "Ringan",
+          "timing": "Pagi",
+          "why": "Gerakan fungsional melatih kekuatan kaki secara bertahap untuk aktivitas sehari-hari.",
+          "tags": [
+            "penguatan",
+            "bertahap"
+          ],
+          "caution": "Gunakan kursi kokoh dan minta pendampingan jika keseimbangan belum stabil."
+        },
+        {
+          "id": "jalan_dalam_rumah",
+          "name": "Jalan Pendek di Dalam Rumah",
+          "emoji": "🚶",
+          "category": "Kardio Ringan",
+          "duration": "5–10 menit",
+          "intensity": "Ringan",
+          "timing": "Beberapa kali sehari",
+          "why": "Sesi pendek lebih mudah disesuaikan dengan energi yang naik turun selama pemulihan.",
+          "tags": [
+            "kardio-ringan",
+            "bertahap"
+          ],
+          "caution": "Berhenti jika muncul pusing, sesak, atau lelah yang tidak biasa."
+        },
+        {
+          "id": "peregangan_pagi",
+          "name": "Peregangan Pagi Seluruh Tubuh",
+          "emoji": "🧘",
+          "category": "Fleksibilitas",
+          "duration": "8–12 menit",
+          "intensity": "Ringan",
+          "timing": "Pagi",
+          "why": "Peregangan lembut membantu tubuh terasa lebih siap memulai aktivitas.",
+          "tags": [
+            "fleksibilitas",
+            "sirkulasi"
+          ],
+          "caution": "Jangan memantul atau memaksa rentang gerak."
+        },
+        {
+          "id": "relaksasi_sore",
+          "name": "Relaksasi Sore Tanpa Layar",
+          "emoji": "🌿",
+          "category": "Pemulihan Mental",
+          "duration": "10–15 menit",
+          "intensity": "Pasif",
+          "timing": "Sore atau sebelum tidur",
+          "why": "Waktu tenang membantu menjaga ritme istirahat saat tubuh sedang membangun stamina kembali.",
+          "tags": [
+            "relaksasi",
+            "istirahat"
+          ],
+          "caution": "Pilih posisi yang nyaman dan tetap prioritaskan tidur malam."
+        }
+      ]
+    }
+  }
+}
