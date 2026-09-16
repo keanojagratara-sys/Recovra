@@ -2,6 +2,9 @@
   "name": "recovra-ai-server",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "description": "Backend kecil buat nyambungin chatbot Recovra AI ke Gemini API",
   "main": "js/server.js",
   "scripts": {
