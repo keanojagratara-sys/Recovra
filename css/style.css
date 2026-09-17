@@ -7665,3 +7665,63 @@ html, body {
 @media (min-width: 851px) {
   .bottom-navigation { display: none !important; }
 }
+
+/* =========================================================
+   RECOVRA — FINAL MOBILE POLISH (v11)
+   1) Ikon sidebar kiri di HP (ternyata fill:none/stroke cuma ada buat desktop)
+   2) Background nav-item di HP (biar gak balik ke default putih browser)
+   3) Kartu dashboard jadi 2 kolom di HP, bukan numpuk 1 kolom raksasa
+   ========================================================= */
+
+@media (max-width: 850px) {
+  /* --- 1 & 2: sidebar kiri (overlay drawer) di HP --- */
+  .left-sidebar .nav-item {
+    background: transparent !important;
+    color: var(--text-2) !important;
+    border-color: transparent !important;
+  }
+  .left-sidebar .nav-item.active {
+    background: linear-gradient(90deg, rgba(123,214,169,.16), rgba(123,214,169,.05)) !important;
+    color: var(--green) !important;
+  }
+  .left-sidebar .nav-icon::before,
+  .left-sidebar .nav-icon::after {
+    content: none !important;
+    display: none !important;
+  }
+  .left-sidebar .nav-icon svg {
+    display: block !important;
+    width: 21px !important;
+    height: 21px !important;
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 1.8 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+  }
+  .left-sidebar .nav-label {
+    color: inherit !important;
+  }
+
+  /* --- 3: kartu dashboard 2 kolom di HP --- */
+  .recovery-overview,
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    gap: 10px !important;
+  }
+  .recovery-answer-card { padding: 16px !important; }
+  .recovery-score-card { grid-column: span 2 !important; }
+  .recovery-score-line strong { font-size: 34px !important; }
+  .recovery-card-kicker { font-size: 10px !important; }
+  .stat-card { padding: 14px !important; }
+  .stat-value { font-size: 20px !important; }
+}
+
+@media (max-width: 380px) {
+  /* Layar super sempit: 2 kolom masih kesempitan, balik ke 1 kolom */
+  .recovery-overview,
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+  .recovery-score-card { grid-column: auto !important; }
+}
